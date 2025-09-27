@@ -13,16 +13,13 @@
 
 [node name="main" type="Node"]
 
-[node name="player" parent="." instance=ExtResource("1_dg77c")]
-position = Vector2(-1, -55)
-
 [node name="barrel" parent="." instance=ExtResource("2_4c57u")]
 
 [node name="bob" parent="." instance=ExtResource("3_efxa6")]
 
 [node name="oscar" parent="." instance=ExtResource("4_dg77c")]
 
-[node name="player2" parent="." instance=ExtResource("1_dg77c")]
+[node name="player" parent="." instance=ExtResource("1_dg77c")]
 
 [node name="tilemap 1" parent="." instance=ExtResource("5_ycdy4")]
 
