@@ -9,6 +9,7 @@ size = Vector2(1023, 199)
 [node name="tristan" type="Node2D"]
 
 [node name="tristan" type="CharacterBody2D" parent="."]
+collision_layer = 2
 script = ExtResource("1_j5j4f")
 
 [node name="tristan collision" type="CollisionShape2D" parent="tristan"]
