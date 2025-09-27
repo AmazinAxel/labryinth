@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://h5p5ybh7ydx7"]
+
+[node name="ui" type="CanvasLayer"]
+layer = 0
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Helath = 10"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 94.0
+offset_top = 2.0
+offset_right = 134.0
+offset_bottom = 42.0
