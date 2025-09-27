@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkcjahxr65ll1"]
+[gd_scene load_steps=3 format=3 uid="uid://bkcjahxr65ll1"]
+
+[ext_resource type="Script" uid="uid://dwdqje7i8lm0f" path="res://scenes/tristan.gd" id="1_m2lla"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_unffu"]
 size = Vector2(57, 20)
@@ -6,7 +8,10 @@ size = Vector2(57, 20)
 [node name="bounds" type="Node2D"]
 
 [node name="tristan" type="Area2D" parent="."]
+script = ExtResource("1_m2lla")
 
 [node name="tristan" type="CollisionShape2D" parent="tristan"]
 position = Vector2(18.5, 0)
 shape = SubResource("RectangleShape2D_unffu")
+
+[connection signal="body_entered" from="tristan" to="tristan" method="_on_body_entered"]
