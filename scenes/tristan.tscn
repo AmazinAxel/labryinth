@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://dutbj2kf5xgvq"]
+[gd_scene load_steps=2 format=3 uid="uid://dutbj2kf5xgvq"]
+
+[ext_resource type="Script" uid="uid://dwdqje7i8lm0f" path="res://scenes/tristan.gd" id="1_j5j4f"]
 
 [node name="tristan" type="Node2D"]
+script = ExtResource("1_j5j4f")
