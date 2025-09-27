@@ -33,6 +33,7 @@ position = Vector2(143, -217)
 [node name="timmy" parent="." instance=ExtResource("7_vivmo")]
 
 [node name="tristan" parent="." instance=ExtResource("8_2cqfq")]
+script = null
 
 [node name="ui" parent="." instance=ExtResource("9_yaehf")]
 
