@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://dutbj2kf5xgvq"]
+[gd_scene load_steps=4 format=3 uid="uid://dutbj2kf5xgvq"]
 
 [ext_resource type="Script" uid="uid://cnh4yrrwsx6pc" path="res://scenes/tristan-code.gd" id="1_j5j4f"]
+[ext_resource type="Texture2D" uid="uid://lnp17lckmx6y" path="res://sprites/tristan.png" id="2_y4e1f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcjgn"]
+size = Vector2(1023, 199)
 
 [node name="tristan" type="Node2D"]
+
+[node name="tristan" type="CharacterBody2D" parent="."]
 script = ExtResource("1_j5j4f")
+
+[node name="tristan collision" type="CollisionShape2D" parent="tristan"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_fcjgn")
+
+[node name="tristan body" type="Sprite2D" parent="tristan"]
+texture = ExtResource("2_y4e1f")
