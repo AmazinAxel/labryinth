@@ -4,13 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://b3hrrlg5r6gm2" path="res://scenes/barrel.tscn" id="2_4c57u"]
 [ext_resource type="PackedScene" uid="uid://0nq6scd76knd" path="res://scenes/bob.tscn" id="3_efxa6"]
 [ext_resource type="PackedScene" uid="uid://l8e0jnlsost7" path="res://scenes/oscar.tscn" id="4_dg77c"]
-[ext_resource type="PackedScene" uid="uid://drfq4skdaq7t5" path="res://scenes/tilemap_1.tscn" id="5_ycdy4"]
-[ext_resource type="PackedScene" uid="uid://3g6ynhg6yaxb" path="res://scenes/tilemap_2.tscn" id="6_w48qg"]
 [ext_resource type="PackedScene" uid="uid://bkcjahxr65ll1" path="res://scenes/bounds.tscn" id="7_efxa6"]
 [ext_resource type="PackedScene" uid="uid://cd3fc3abkuhx8" path="res://scenes/timmy.tscn" id="7_vivmo"]
 [ext_resource type="PackedScene" uid="uid://dutbj2kf5xgvq" path="res://scenes/tristan.tscn" id="8_2cqfq"]
-[ext_resource type="PackedScene" uid="uid://nyyd7kck8ucg" path="res://scenes/ui.tscn" id="9_yaehf"]
+[ext_resource type="PackedScene" uid="uid://cja8x6aq5tgdi" path="res://scenes/map.tscn" id="9_efxa6"]
+[ext_resource type="PackedScene" uid="uid://h5p5ybh7ydx7" path="res://scenes/ui.tscn" id="9_yaehf"]
 [ext_resource type="PackedScene" uid="uid://b3djnawdrtxbc" path="res://scenes/vines.tscn" id="10_074og"]
+[ext_resource type="PackedScene" uid="uid://d0n6lyqwrpmvi" path="res://scenes/music_controller.tscn" id="12_dg77c"]
 
 [node name="main" type="Node"]
 
@@ -21,14 +21,8 @@
 [node name="oscar" parent="." instance=ExtResource("4_dg77c")]
 
 [node name="player" parent="." instance=ExtResource("1_dg77c")]
+z_index = 1
 position = Vector2(16, -69)
-
-[node name="tilemap 1" parent="." instance=ExtResource("5_ycdy4")]
-
-[node name="tilemap 2" parent="." instance=ExtResource("6_w48qg")]
-
-[node name="bounds" parent="tilemap 2" instance=ExtResource("7_efxa6")]
-position = Vector2(143, -217)
 
 [node name="timmy" parent="." instance=ExtResource("7_vivmo")]
 
@@ -37,3 +31,10 @@ position = Vector2(143, -217)
 [node name="ui" parent="." instance=ExtResource("9_yaehf")]
 
 [node name="vines" parent="." instance=ExtResource("10_074og")]
+
+[node name="Map" parent="." instance=ExtResource("9_efxa6")]
+
+[node name="bounds" parent="Map" instance=ExtResource("7_efxa6")]
+position = Vector2(143, -217)
+
+[node name="MusicController" parent="." instance=ExtResource("12_dg77c")]
