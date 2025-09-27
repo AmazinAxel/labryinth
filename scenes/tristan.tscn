@@ -8,13 +8,12 @@ size = Vector2(1023, 199)
 
 [node name="tristan" type="Node2D"]
 
-[node name="tristan" type="CharacterBody2D" parent="."]
-collision_layer = 2
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_j5j4f")
 
-[node name="tristan collision" type="CollisionShape2D" parent="tristan"]
+[node name="tristan collision" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_fcjgn")
 
-[node name="tristan body" type="Sprite2D" parent="tristan"]
+[node name="tristan body" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("2_y4e1f")

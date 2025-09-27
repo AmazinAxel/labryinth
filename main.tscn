@@ -21,7 +21,7 @@
 [node name="oscar" parent="." instance=ExtResource("4_dg77c")]
 
 [node name="player" parent="." instance=ExtResource("1_dg77c")]
-position = Vector2(56, -76)
+position = Vector2(16, -69)
 
 [node name="tilemap 1" parent="." instance=ExtResource("5_ycdy4")]
 
@@ -33,7 +33,6 @@ position = Vector2(143, -217)
 [node name="timmy" parent="." instance=ExtResource("7_vivmo")]
 
 [node name="tristan" parent="." instance=ExtResource("8_2cqfq")]
-position = Vector2(5, 43)
 
 [node name="ui" parent="." instance=ExtResource("9_yaehf")]
 
