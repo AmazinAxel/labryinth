@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0n6lyqwrpmvi"]
+
+[ext_resource type="AudioStream" uid="uid://dypr2ty72sfaw" path="res://assets/ambient.mp3" id="1_86cwe"]
+[ext_resource type="Script" uid="uid://cdv40cdv3s4k7" path="res://scenes/music_controller.gd" id="1_nuwea"]
+
+[node name="MusicController" type="Node"]
+script = ExtResource("1_nuwea")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_86cwe")
+volume_db = -2.0
+autoplay = true
