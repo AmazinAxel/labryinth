@@ -17,3 +17,7 @@ func _on_body_entered(body: Node2D) -> void:
 		await get_tree().create_timer(0.2).timeout
 
 		get_node("/root/main/tristanBlink").hide()
+
+		await get_tree().create_timer(5).timeout
+		tristan.goUp = false;
+		tristan.global_position.y = 1000
