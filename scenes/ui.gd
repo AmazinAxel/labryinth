@@ -18,3 +18,11 @@ func on_player_health_changed(new_health: int):
 func _process(delta: float) -> void:
 	var gameManager = get_node("../GameManager")
 	on_player_health_changed(gameManager.health)
+
+
+func _on_game_manager_died(deathMessage: String) -> void:
+	var deathReason = get_node("death/death reason")
+	var deathBackground = get_node("death/background")
+	deathReason.text = deathMessage;
+	deathReason.visible = true;
+	deathBackground.visible = true;

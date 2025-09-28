@@ -8,8 +8,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _on_body_entered(body: Node2D) -> void:
-	print(body.name) # Replace with function body.
 	if body.name =="player body":
 		var manager = get_node("../../../GameManager")
+		manager.lastDamageReason = "oscar"
 		manager.health-=10
-	#print(player.current_health)

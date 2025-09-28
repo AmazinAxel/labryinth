@@ -61,3 +61,5 @@ offset_bottom = 199.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.7607843)
+
+[connection signal="died" from="GameManager" to="ui" method="_on_game_manager_died"]

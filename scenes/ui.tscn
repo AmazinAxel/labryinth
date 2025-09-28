@@ -1,8 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://nyyd7kck8ucg"]
+[gd_scene load_steps=4 format=3 uid="uid://nyyd7kck8ucg"]
 
 [ext_resource type="Script" uid="uid://dfyqvnh5uvjja" path="res://scenes/ui.gd" id="1_nt7q6"]
-[ext_resource type="Script" path="res://scenes/die.gd" id="2_x4jx1"]
-[ext_resource type="Script" path="res://scenes/diebg.gd" id="2_yev5y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6e0p"]
 bg_color = Color(0.2231029, 0.2231029, 0.22310278, 1)
@@ -30,9 +28,9 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_27fn8")
 value = 50.0
 show_percentage = false
 
-[node name="Node" type="Node" parent="."]
+[node name="death" type="Node" parent="."]
 
-[node name="background" type="ColorRect" parent="Node"]
+[node name="background" type="ColorRect" parent="death"]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,9 +38,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
-script = ExtResource("2_yev5y")
 
-[node name="death reason" type="Label" parent="Node"]
+[node name="death reason" type="Label" parent="death"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -59,4 +56,3 @@ scale = Vector2(3, 3)
 text = "You died!"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_x4jx1")
