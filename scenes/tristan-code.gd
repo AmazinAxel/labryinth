@@ -1,14 +1,7 @@
 extends CharacterBody2D
 
-var goUp = true
+@export var goUp = false
 var target_y = 0
-
-func tristan():
-	goUp = true
-		
-	#print(goUp)
-	#ddtarget_y = PlayerControls.global_position.y - 100
-
 
 
 func _process(delta: float) -> void:

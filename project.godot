@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 TristanCode="*res://scenes/tristan-code.gd"
 PlayerControls="*res://player controls.gd"
+Die="*res://scenes/die.gd"
+Diebg="*res://scenes/diebg.gd"
 
 [input]
 

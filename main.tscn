@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bkcjahxr65ll1" path="res://scenes/bounds.tscn" id="7_efxa6"]
 [ext_resource type="PackedScene" uid="uid://cd3fc3abkuhx8" path="res://scenes/timmy.tscn" id="7_vivmo"]
 [ext_resource type="PackedScene" uid="uid://dutbj2kf5xgvq" path="res://scenes/tristan.tscn" id="8_2cqfq"]
-[ext_resource type="PackedScene" uid="uid://cja8x6aq5tgdi" path="res://scenes/map.tscn" id="9_efxa6"]
-[ext_resource type="PackedScene" uid="uid://h5p5ybh7ydx7" path="res://scenes/ui.tscn" id="9_yaehf"]
+[ext_resource type="PackedScene" path="res://scenes/map.tscn" id="9_efxa6"]
+[ext_resource type="PackedScene" uid="uid://nyyd7kck8ucg" path="res://scenes/ui.tscn" id="9_yaehf"]
 [ext_resource type="PackedScene" uid="uid://b3djnawdrtxbc" path="res://scenes/vines.tscn" id="10_074og"]
-[ext_resource type="PackedScene" uid="uid://d0n6lyqwrpmvi" path="res://scenes/music_controller.tscn" id="12_dg77c"]
+[ext_resource type="PackedScene" path="res://scenes/music_controller.tscn" id="12_dg77c"]
 
 [node name="main" type="Node"]
 
