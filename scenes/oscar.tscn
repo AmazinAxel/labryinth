@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://l8e0jnlsost7"]
+[gd_scene load_steps=12 format=3 uid="uid://l8e0jnlsost7"]
 
 [ext_resource type="Script" uid="uid://bye2th5yuvpgu" path="res://scenes/oscar.gd" id="1_blnuo"]
 [ext_resource type="Texture2D" uid="uid://cllm6qj63voe4" path="res://sprites/slime_spriteTop.png" id="2_4v7cq"]
@@ -50,6 +50,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2fvy"]
 size = Vector2(24, 20.75)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4v7cq"]
+size = Vector2(29, 26)
+
 [node name="oscars" type="Node2D"]
 
 [node name="oscar" type="CharacterBody2D" parent="."]
@@ -69,8 +72,12 @@ script = ExtResource("3_4v7cq")
 position = Vector2(0, 0.375)
 shape = SubResource("RectangleShape2D_j2fvy")
 
-[connection signal="body_entered" from="oscar/Area2D" to="oscar" method="_on_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_4v7cq")
+
 [connection signal="body_entered" from="oscar/Area2D" to="oscar" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/Area2D" to="oscar" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/Area2D" to="oscar/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/Area2D" to="oscar" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/Area2D" to="oscar/Area2D" method="_on_body_exited"]

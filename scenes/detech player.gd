@@ -2,6 +2,7 @@ extends Area2D
 
 var touchingPlayer: bool = false
 func _on_body_entered(body: Node2D) -> void:
+	#print(body)
 	if body.name =="player body":
 		touchingPlayer= true
 		var manager = get_node("../../../GameManager")
@@ -10,6 +11,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_body_exited(body: Node2D) -> void:
+	
 	if body.name=="player body":
 		touchingPlayer = false
 	
