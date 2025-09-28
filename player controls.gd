@@ -7,9 +7,6 @@ extends CharacterBody2D
 @export var facingRight:bool = true
 @export var isAttacking: bool = false
 
-@onready var hurtBox = $hurtBox
-@onready var timer = $Timer
-
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("left", "right", "up", "down")
 
@@ -24,7 +21,7 @@ func _physics_process(delta: float) -> void:
 			var sprite = self.get_node("Sprite2D")
 			sprite.flip_h = direction.x < 0
 			facingRight = direction.x < 0
-			var hurtShape = hurtBox.get_child(0)
+			var hurtShape = get_node("./hurtBox").get_child(0)
 			
 			if facingRight:
 				hurtShape.position.x =-27
@@ -33,8 +30,9 @@ func _physics_process(delta: float) -> void:
 	
 	#print(direction.x)
 	var manager = get_node("/root/main/GameManager")
-	if manager.inBarrel:
-		velocity = Vector2.ZERO
+	if manager:
+		if manager.inBarrel:
+			velocity = Vector2.ZERO
 
 	check_for_spikes()
 	check_for_healthPotion()
@@ -54,6 +52,7 @@ func attack():
 		manager.health -= 10
 		isAttacking = true
 		print(self)
+		var timer = get_node("Timer");
 		timer.start()
 		print('starting timer')
 
@@ -77,30 +76,32 @@ func toggle_barrel_state() -> void:
 
 func check_for_spikes() -> void:
 	var tileMap = get_node("/root/main/Map/Objects")
-	var coords = tileMap.local_to_map(global_position)
-	var tile = tileMap.get_cell_source_id(coords)
+	if tileMap:
+		var coords = tileMap.local_to_map(global_position)
+		var tile = tileMap.get_cell_source_id(coords)
 
-	if tile != -1:
-		var tile_data = tileMap.get_cell_tile_data(coords)
-		if tile_data and tile_data.get_custom_data("isSpikeType"):
-			var manager = get_node("/root/main/GameManager")
-			manager.lastDamageReason = "spikes"
-			#self.get_node("DamageSound").play()
-			manager.health -= 10;
+		if tile != -1:
+			var tile_data = tileMap.get_cell_tile_data(coords)
+			if tile_data and tile_data.get_custom_data("isSpikeType"):
+				var manager = get_node("/root/main/GameManager")
+				manager.lastDamageReason = "spikes"
+				#self.get_node("DamageSound").play()
+				manager.health -= 10;
 			
 func check_for_healthPotion() -> void:
 	var tileMap = get_node("/root/main/Map/Objects")
-	var coords = tileMap.local_to_map(global_position)
-	var tile = tileMap.get_cell_source_id(coords)
+	if tileMap:
+		var coords = tileMap.local_to_map(global_position)
+		var tile = tileMap.get_cell_source_id(coords)
 
-	if tile != -1:
-		var tile_data = tileMap.get_cell_tile_data(coords)
-		if tile_data and tile_data.get_custom_data("isHealthPotionType"):
-			var manager = get_node("/root/main/GameManager")
-			
-			manager.health += 20;
-			#self.get_node("PickupSound").play()
-			tileMap.set_cell(coords, -1)
+		if tile != -1:
+			var tile_data = tileMap.get_cell_tile_data(coords)
+			if tile_data and tile_data.get_custom_data("isHealthPotionType"):
+				var manager = get_node("/root/main/GameManager")
+				
+				manager.health += 20;
+				#self.get_node("PickupSound").play()
+				tileMap.set_cell(coords, -1)
 
 
 func _on_timer_timeout() -> void:

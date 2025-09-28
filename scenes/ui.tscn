@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://nyyd7kck8ucg"]
+[gd_scene load_steps=12 format=3 uid="uid://nyyd7kck8ucg"]
 
 [ext_resource type="Script" uid="uid://dfyqvnh5uvjja" path="res://scenes/ui.gd" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://b0h6jyhhq0a2v" path="res://sprites/heart.png" id="2_x4jx1"]
 [ext_resource type="Script" uid="uid://cpgn2djovqhrv" path="res://scenes/try_again.gd" id="3_yev5y"]
 [ext_resource type="Texture2D" uid="uid://bwlkkugxjogm8" path="res://sprites/win.png" id="4_gdt2y"]
+[ext_resource type="Script" uid="uid://duvrma2sf51ux" path="res://scenes/start-game.gd" id="5_wm3ai"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6e0p"]
 bg_color = Color(0.2231029, 0.2231029, 0.22310278, 1)
@@ -28,6 +29,9 @@ font_size = 100
 
 [sub_resource type="LabelSettings" id="LabelSettings_gdt2y"]
 font_size = 200
+
+[sub_resource type="LabelSettings" id="LabelSettings_8dubc"]
+font_size = 150
 
 [node name="ui" type="CanvasLayer"]
 layer = 10
@@ -93,6 +97,7 @@ vertical_alignment = 1
 
 [node name="try again button" type="Button" parent="death"]
 visible = false
+texture_filter = 1
 offset_left = 468.0
 offset_top = 526.0
 offset_right = 579.0
@@ -127,4 +132,42 @@ scale = Vector2(0.5, 0.5)
 text = "You win!!"
 label_settings = SubResource("LabelSettings_gdt2y")
 
+[node name="start" type="CanvasLayer" parent="."]
+layer = 14
+
+[node name="ColorRect" type="ColorRect" parent="start"]
+offset_right = 1162.0
+offset_bottom = 665.0
+color = Color(0.1769838, 0.118366756, 0, 1)
+
+[node name="Button" type="Button" parent="start"]
+offset_left = 323.0
+offset_top = 365.0
+offset_right = 790.0
+offset_bottom = 458.0
+theme_override_font_sizes/font_size = 50
+text = "Play"
+script = ExtResource("5_wm3ai")
+
+[node name="Label2" type="Label" parent="start"]
+offset_left = 339.0
+offset_top = 513.99994
+offset_right = 2537.0
+offset_bottom = 927.0
+scale = Vector2(0.2, 0.2)
+text = "Made by Owen, Alec & Vaughn
+Daydream Seattle 2025"
+label_settings = SubResource("LabelSettings_8dubc")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="start"]
+offset_top = 60.0
+offset_right = 1155.0
+offset_bottom = 328.0
+text = "Labyrinth"
+label_settings = SubResource("LabelSettings_8dubc")
+horizontal_alignment = 1
+
 [connection signal="pressed" from="death/try again button" to="death/try again button" method="_on_pressed"]
+[connection signal="pressed" from="start/Button" to="death/try again button" method="_on_button_pressed"]
+[connection signal="pressed" from="start/Button" to="start/Button" method="_on_pressed"]

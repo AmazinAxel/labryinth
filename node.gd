@@ -14,7 +14,7 @@ func _process(_float: float) -> void:
 		if lastDamageReason == "barrel":
 			deathMessage = "The barrel..?\nStaying in the barrel\nwill slowly kill you...\nGo out and back in to prevent death.";
 		elif lastDamageReason == "oscar":
-			deathMessage = "Oscar got you.\nHe's not very kind to travellers like you.\nAttack him.";
+			deathMessage = "Oscar got you.\nHe's not very kind to travellers like you.\nAttack him by pressing [Space]";
 		elif lastDamageReason == "tristan":
 			deathMessage = "You died to Tristan..\nWhen you see the blinks,\npress F near a barrel to hide...";
 		elif lastDamageReason == "bob":
