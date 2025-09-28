@@ -17,8 +17,6 @@
 
 [node name="barrel" parent="." instance=ExtResource("2_4c57u")]
 
-[node name="bob" parent="." instance=ExtResource("3_efxa6")]
-
 [node name="oscar" parent="." instance=ExtResource("4_dg77c")]
 z_index = 1
 position = Vector2(180, -142)
@@ -47,6 +45,22 @@ position = Vector2(141, -218)
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("12_ycdy4")
 
+[node name="bobBlink" type="CanvasLayer" parent="."]
+visible = false
+follow_viewport_enabled = true
+
+[node name="bobBlink overlay" type="ColorRect" parent="bobBlink"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -501.0
+offset_top = -2080.0
+offset_right = 435.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08048906, 0.433058, 0.8122545, 0.7607843)
+
 [node name="tristanBlink" type="CanvasLayer" parent="."]
 visible = false
 follow_viewport_enabled = true
@@ -62,5 +76,8 @@ offset_bottom = 199.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.7607843)
+
+[node name="bob" parent="." instance=ExtResource("3_efxa6")]
+position = Vector2(15, 174)
 
 [connection signal="died" from="GameManager" to="ui" method="_on_game_manager_died"]

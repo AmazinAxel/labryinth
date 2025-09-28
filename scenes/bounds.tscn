@@ -1,5 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkcjahxr65ll1"]
+[gd_scene load_steps=4 format=3 uid="uid://bkcjahxr65ll1"]
 
+[ext_resource type="Script" uid="uid://ci5ebk2crorvd" path="res://scenes/bob-code.gd" id="1_iveam"]
 [ext_resource type="Script" uid="uid://ctecnusijuygd" path="res://scenes/bounds.gd" id="1_iveam"]
 [ext_resource type="Script" uid="uid://dwdqje7i8lm0f" path="res://scenes/tristan.gd" id="1_m2lla"]
 
@@ -7,13 +9,19 @@
 size = Vector2(57, 20)
 
 [node name="bounds" type="Node2D"]
+
+[node name="bob" type="Area2D" parent="."]
 script = ExtResource("1_iveam")
+
+[node name="bob" type="CollisionShape2D" parent="bob"]
+position = Vector2(-58, -1411)
+shape = SubResource("RectangleShape2D_unffu")
 
 [node name="tristan3" type="Area2D" parent="."]
 script = ExtResource("1_m2lla")
 
 [node name="tristan" type="CollisionShape2D" parent="tristan3"]
-position = Vector2(18.5, 0)
+position = Vector2(18, -2)
 shape = SubResource("RectangleShape2D_unffu")
 
 [node name="tristan2" type="Area2D" parent="."]
@@ -30,6 +38,7 @@ script = ExtResource("1_m2lla")
 position = Vector2(23, -353)
 shape = SubResource("RectangleShape2D_unffu")
 
+[connection signal="body_entered" from="bob" to="bob" method="_on_body_entered"]
 [connection signal="body_entered" from="tristan3" to="tristan3" method="_on_body_entered"]
 [connection signal="body_entered" from="tristan2" to="tristan2" method="_on_body_entered"]
 [connection signal="body_entered" from="tristan" to="tristan" method="_on_body_entered"]

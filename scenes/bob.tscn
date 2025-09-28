@@ -1,3 +1,25 @@
-[gd_scene format=3 uid="uid://0nq6scd76knd"]
+[gd_scene load_steps=5 format=3 uid="uid://0nq6scd76knd"]
 
-[node name="bob" type="Node2D"]
+[ext_resource type="Script" uid="uid://bls5ktng6y2ro" path="res://scenes/bob.gd" id="1_gqs4f"]
+[ext_resource type="Script" uid="uid://blhyfeqlvbqm8" path="res://scenes/bob-collision.gd" id="1_kf1ye"]
+[ext_resource type="Texture2D" uid="uid://dhp80uerpc2v1" path="res://sprites/bob.png" id="2_gqs4f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2t6t"]
+size = Vector2(1023, 199)
+
+[node name="bob" type="CharacterBody2D"]
+script = ExtResource("1_gqs4f")
+
+[node name="bob" type="Area2D" parent="."]
+script = ExtResource("1_kf1ye")
+
+[node name="bob collision" type="CollisionShape2D" parent="bob"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_i2t6t")
+
+[node name="bob body" type="Sprite2D" parent="."]
+position = Vector2(1.5, -67)
+scale = Vector2(1.9980469, 0.64)
+texture = ExtResource("2_gqs4f")
+
+[connection signal="body_entered" from="bob" to="bob" method="_on_body_entered"]
