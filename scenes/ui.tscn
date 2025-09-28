@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://nyyd7kck8ucg"]
+[gd_scene load_steps=10 format=3 uid="uid://nyyd7kck8ucg"]
 
 [ext_resource type="Script" uid="uid://dfyqvnh5uvjja" path="res://scenes/ui.gd" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://b0h6jyhhq0a2v" path="res://sprites/heart.png" id="2_x4jx1"]
+[ext_resource type="Script" uid="uid://cpgn2djovqhrv" path="res://scenes/try_again.gd" id="3_yev5y"]
+[ext_resource type="Texture2D" uid="uid://bwlkkugxjogm8" path="res://sprites/win.png" id="4_gdt2y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6e0p"]
 bg_color = Color(0.2231029, 0.2231029, 0.22310278, 1)
@@ -23,6 +25,9 @@ font_color = Color(0.90789396, 0.41451004, 0.49931228, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_x4jx1"]
 font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdt2y"]
+font_size = 200
 
 [node name="ui" type="CanvasLayer"]
 layer = 10
@@ -85,3 +90,41 @@ text = "You died"
 label_settings = SubResource("LabelSettings_x4jx1")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="try again button" type="Button" parent="death"]
+visible = false
+offset_left = 468.0
+offset_top = 526.0
+offset_right = 579.0
+offset_bottom = 564.0
+scale = Vector2(2, 2)
+text = "Try again"
+script = ExtResource("3_yev5y")
+
+[node name="win" type="ColorRect" parent="."]
+visible = false
+z_index = 5
+offset_right = 1172.0
+offset_bottom = 672.0
+color = Color(0.41960785, 0.85882354, 0.4745098, 0.34901962)
+
+[node name="Win2" type="Sprite2D" parent="win"]
+position = Vector2(980, 479)
+rotation = 4.712389
+texture = ExtResource("4_gdt2y")
+
+[node name="Win" type="Sprite2D" parent="win"]
+position = Vector2(167, 483)
+texture = ExtResource("4_gdt2y")
+
+[node name="win text" type="Label" parent="win"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 86.0
+offset_right = 1298.0
+offset_bottom = 359.0
+scale = Vector2(0.5, 0.5)
+text = "You win!!"
+label_settings = SubResource("LabelSettings_gdt2y")
+
+[connection signal="pressed" from="death/try again button" to="death/try again button" method="_on_pressed"]

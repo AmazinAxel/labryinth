@@ -15,7 +15,7 @@ func on_player_health_changed(new_health: int):
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(float) -> void:
+func _process(_float: float) -> void:
 	var gameManager = get_node("../GameManager")
 	on_player_health_changed(gameManager.health)
 
