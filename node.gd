@@ -1,6 +1,6 @@
 extends Node
 
-var health = 10
+var health = 100
 var lastDamageReason = ""
 
 signal died
