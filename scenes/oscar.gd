@@ -1,18 +1,23 @@
 extends CharacterBody2D
 
-## The speed of the monster in pixels wper second.
 @export var speed: float = 100.0
-## The distance in pixels at which the monster will detect and chase the player.
-@export var detection_range: float = 150.0
+@export var detection_range: float = 100.0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	var distance = global_position.distance_to(PlayerControls.global_position)
-	#print(distance)
-	# --- MODIFIED LOGIC ---
-	# We check if the player is in range BUT ALSO not too close.
+var player: Sprite2D
+
+func _ready() -> void:
+	# Adjust this path to match your actual scene tree
+	player = get_node("/root/main/player/player body/Sprite2D")
+
+func _physics_process(delta: float) -> void:
+	if not player:
+		return;
+	var distance = global_position.distance_to(player.global_position)
+
 	if distance < detection_range:
-	
-		var direction = (PlayerControls.global_position - global_position).normalized()
-		global_position += direction * speed * delta
+		var direction = (player.global_position - global_position).normalized()
+		velocity = direction * speed
+	else:
+		velocity = Vector2.ZERO
+
+	move_and_slide()
