@@ -6,10 +6,9 @@ extends CharacterBody2D
 @export var friction = 10.0 # How quickly the player slows down.
 
 signal health_changed(new_health)
-signal died
 
-var max_health: float = 100
-var current_health: float = max_health
+@export var max_health: float = 100
+@export var current_health: float = max_health
 
 func _ready() -> void:
 	velocity = Vector2.UP * 800
@@ -31,17 +30,15 @@ func take_damage(amount: float):
 	current_health -= amount
 
 	# Emit the signal and pass the new health value
-	health_changed.emit(current_health)
+	#health_changed.emit(current_health)
 
-	if current_health <= 0:
-		get_tree().change_scene_to_file("res://death.tscn")
-		died.emit()
+#	if current_health <= 0:
+		
+#		died.emit()
 		# Change scene text
 
-func _on_area_2d_body_entered(body):
-	print(body.name)
 
-func _process(delta: float) -> void:
+#func _process(delta: float) -> void:
 	#current_health -= delta*.5
-	health_changed.emit(current_health)
-	take_damage(1)
+	#health_changed.emit(current_health)
+	#take_damage(.01)

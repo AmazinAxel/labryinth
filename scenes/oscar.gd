@@ -9,7 +9,7 @@ extends CharacterBody2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var distance = global_position.distance_to(PlayerControls.global_position)
-	print(distance)
+	#print(distance)
 	# --- MODIFIED LOGIC ---
 	# We check if the player is in range BUT ALSO not too close.
 	if distance < detection_range:

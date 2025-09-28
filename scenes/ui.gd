@@ -5,8 +5,10 @@ extends CanvasLayer
 func _ready():
 	# Find the player node and connect to its signal.
 	# This path might change depending on your scene tree structure.
+	"""
 	var player = get_node("../player/player body") 
 	player.health_changed.connect(on_player_health_changed)
+	"""
 # This function will automatically run whenever the player emits the signal
 func on_player_health_changed(new_health: int):
 	healthBar.value = new_health
@@ -14,4 +16,5 @@ func on_player_health_changed(new_health: int):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	var gameManager = get_node("../GameManager")
+	on_player_health_changed(gameManager.health)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://l8e0jnlsost7"]
+[gd_scene load_steps=11 format=3 uid="uid://l8e0jnlsost7"]
 
 [ext_resource type="Script" uid="uid://bye2th5yuvpgu" path="res://scenes/oscar.gd" id="1_blnuo"]
 [ext_resource type="Texture2D" uid="uid://cllm6qj63voe4" path="res://sprites/slime_spriteTop.png" id="2_4v7cq"]
+[ext_resource type="Script" uid="uid://c33gk1kk3x54w" path="res://scenes/detech player.gd" id="3_4v7cq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_blnuo"]
 atlas = ExtResource("2_4v7cq")
@@ -61,7 +62,13 @@ position = Vector2(-2.9802322e-08, -1.1920929e-07)
 scale = Vector2(0.37890628, 0.32031247)
 sprite_frames = SubResource("SpriteFrames_5w2tu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar"]
+[node name="Area2D" type="Area2D" parent="oscar"]
+script = ExtResource("3_4v7cq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/Area2D"]
 position = Vector2(0, 0.375)
 shape = SubResource("RectangleShape2D_j2fvy")
-disabled = true
+
+[connection signal="body_entered" from="oscar/Area2D" to="oscar" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/Area2D" to="oscar" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/Area2D" to="oscar/Area2D" method="_on_body_entered"]
