@@ -14,15 +14,17 @@ func _process(_float: float) -> void:
 		if lastDamageReason == "barrel":
 			deathMessage = "The barrel..?\nStaying in the barrel\nwill slowly kill you...\nGo out and back in to prevent death.";
 		elif lastDamageReason == "oscar":
-			deathMessage = "Oscar got you.\nHe's not very kind to travellers like you.\nAttack him by pressing [Space]";
+			deathMessage = "Oscar got you.\nHe's not very kind to travellers like you.\nAttack him by pressing [Space]...";
 		elif lastDamageReason == "tristan":
 			deathMessage = "You died to Tristan..\nWhen you see the blinks,\npress F near a barrel to hide...";
 		elif lastDamageReason == "bob":
-			deathMessage = "You died to Bob..\nThey're like Tristan, but be extra careful...\nThey come back thrice.";
+			deathMessage = "You died to Bob..\nThey're like Tristan, but be extra careful...\nThey come back thrice...";
 		elif lastDamageReason == "timmy":
-			deathMessage = "Timmy got you..\nClick the spider to swat at it..\notherwise, it'll eat your health.";
+			deathMessage = "Timmy got you..\nClick the spider to swat at it..\notherwise, it'll eat your health...";
 		elif lastDamageReason == "spikes":
 			deathMessage = "The spikes..\nStay aware..";
+		elif lastDamageReason == "self":
+			deathMessage = "You died to yourself..?\nCareful.. every attack reduces\nfrom your own health...";
 		else:
 			deathMessage = "How did you die?"
 		died.emit(deathMessage)
