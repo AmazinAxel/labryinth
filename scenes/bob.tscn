@@ -8,6 +8,7 @@
 size = Vector2(1023, 199)
 
 [node name="bob" type="CharacterBody2D"]
+z_index = 2
 script = ExtResource("1_gqs4f")
 
 [node name="bob" type="Area2D" parent="."]

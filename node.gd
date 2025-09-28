@@ -7,7 +7,7 @@ var isDead = false;
 
 signal died
 
-func _process(delta: float) -> void:
+func _process(_float: float) -> void:
 	if health <= 0 && !isDead:
 		isDead = true;
 		var deathMessage = "";

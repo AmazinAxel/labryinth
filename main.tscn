@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://usl83o0tohjj"]
+[gd_scene load_steps=14 format=3 uid="uid://usl83o0tohjj"]
 
 [ext_resource type="PackedScene" uid="uid://gnvl3l7nwbty" path="res://scenes/player.tscn" id="1_dg77c"]
 [ext_resource type="PackedScene" uid="uid://b3hrrlg5r6gm2" path="res://scenes/barrel.tscn" id="2_4c57u"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b3djnawdrtxbc" path="res://scenes/vines.tscn" id="10_074og"]
 [ext_resource type="PackedScene" path="res://scenes/music_controller.tscn" id="12_dg77c"]
 [ext_resource type="Script" uid="uid://meqeaq01dbb" path="res://node.gd" id="12_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://cu6uvbn6wdxch" path="res://scenes/jared.tscn" id="13_ycdy4"]
 
 [node name="main" type="Node"]
 
@@ -79,5 +80,7 @@ color = Color(0, 0, 0, 0.7607843)
 
 [node name="bob" parent="." instance=ExtResource("3_efxa6")]
 position = Vector2(15, 174)
+
+[node name="jared" parent="." instance=ExtResource("13_ycdy4")]
 
 [connection signal="died" from="GameManager" to="ui" method="_on_game_manager_died"]
