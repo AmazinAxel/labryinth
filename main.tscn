@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cja8x6aq5tgdi" path="res://scenes/map.tscn" id="9_efxa6"]
 [ext_resource type="PackedScene" uid="uid://nyyd7kck8ucg" path="res://scenes/ui.tscn" id="9_yaehf"]
 [ext_resource type="PackedScene" uid="uid://b3djnawdrtxbc" path="res://scenes/vines.tscn" id="10_074og"]
-[ext_resource type="PackedScene" uid="uid://d0n6lyqwrpmvi" path="res://scenes/music_controller.tscn" id="12_dg77c"]
+[ext_resource type="PackedScene" path="res://scenes/music_controller.tscn" id="12_dg77c"]
 [ext_resource type="Script" uid="uid://meqeaq01dbb" path="res://node.gd" id="12_ycdy4"]
 
 [node name="main" type="Node"]

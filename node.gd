@@ -2,11 +2,14 @@ extends Node
 
 @export var health = 100
 @export var lastDamageReason = ""
+@export var inBarrel = false;
+var isDead = false;
 
 signal died
 
 func _process(delta: float) -> void:
-	if health <= 0:
+	if health <= 0 && !isDead:
+		isDead = true;
 		var deathMessage = "";
 		if lastDamageReason == "barrel":
 			deathMessage = "The barrel..?\nStaying in the barrel\nwill slowly kill you...\nGo out and back in to prevent death.";

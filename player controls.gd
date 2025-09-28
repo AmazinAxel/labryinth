@@ -3,8 +3,7 @@ extends CharacterBody2D
 @export var speed: float = 100.0
 @export var acceleration: float = 50.0
 @export var friction: float = 30.0
-@export var inBarrel: bool = false
-@export var facingRight:bool = true
+@export var facingRight: bool = true
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -22,7 +21,8 @@ func _physics_process(delta: float) -> void:
 			facingRight = direction.x < 0
 	
 	#print(direction.x)
-	if inBarrel:
+	var manager = get_node("/root/main/GameManager")
+	if manager.inBarrel:
 		velocity = Vector2.ZERO
 
 	check_for_spikes()
@@ -43,9 +43,10 @@ func toggle_barrel_state() -> void:
 			var isBarrelType = tile_data.get_custom_data("isBarrelType")
 			if isBarrelType:
 				var center = tileMap.map_to_local(coords)
+				var manager = get_node("/root/main/GameManager")
 				global_position = center
-				inBarrel = !inBarrel
-				visible = !inBarrel
+				manager.inBarrel = !manager.inBarrel
+				visible = !manager.inBarrel
 
 func check_for_spikes() -> void:
 	var tileMap = get_node("/root/main/Map/Objects")

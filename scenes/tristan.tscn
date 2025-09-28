@@ -22,4 +22,6 @@ shape = SubResource("RectangleShape2D_fcjgn")
 [node name="tristan body" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("2_y4e1f")
 
+[connection signal="ready" from="." to="CharacterBody2D" method="_on_tristan_ready"]
+[connection signal="ready" from="." to="CharacterBody2D/Area2D" method="_on_tristan_ready"]
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D/Area2D" method="_on_body_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://gnvl3l7nwbty"]
+[gd_scene load_steps=7 format=3 uid="uid://gnvl3l7nwbty"]
 
 [ext_resource type="Script" uid="uid://c6h7koij4ryjt" path="res://player controls.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bcw7lx35vlbny" path="res://sprites/our character.png" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://c7hqaeuva1wnf" path="res://scenes/collision_shape_2d.gd" id="2_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w48qg"]
 size = Vector2(10, 14)
@@ -25,6 +26,7 @@ script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player body"]
 shape = SubResource("RectangleShape2D_w48qg")
+script = ExtResource("2_qhqgy")
 
 [node name="Sprite2D" type="Sprite2D" parent="player body"]
 texture_filter = 1
@@ -37,3 +39,5 @@ position_smoothing_enabled = true
 [node name="PointLight2D" type="PointLight2D" parent="player body"]
 color = Color(0.92, 0.62376004, 0.2852, 1)
 texture = SubResource("GradientTexture2D_qhqgy")
+
+[connection signal="ready" from="." to="player body" method="_on_player_ready"]
