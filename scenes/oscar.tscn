@@ -69,8 +69,8 @@ script = ExtResource("3_4v7cq")
 position = Vector2(0, 0.375)
 shape = SubResource("RectangleShape2D_j2fvy")
 
-[connection signal="body_entered" from="oscar/Area2D" to="oscar" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/Area2D" to="oscar" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/Area2D" to="oscar" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/Area2D" to="oscar/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/Area2D" to="oscar" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/Area2D" to="oscar/Area2D" method="_on_body_exited"]
