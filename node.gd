@@ -1,7 +1,7 @@
 extends Node
 
-var health = 100
-var lastDamageReason = ""
+@export var health = 100
+@export var lastDamageReason = ""
 
 signal died
 
@@ -17,9 +17,9 @@ func _process(delta: float) -> void:
 		elif lastDamageReason == "bob":
 			deathMessage = "You died to Bob..\nThey're like Tristan, but be extra careful...\nThey come back thrice!";
 		elif lastDamageReason == "timmy":
-			deathMessage = "Timmy got you..\nClick the spider to swat it - otherwise it will eat away at your health!";
+			deathMessage = "Timmy got you..\nClick the spider to swat at it..\notherwise it will eat away at your health!";
 		elif lastDamageReason == "spikes":
-			deathMessage = "The spikes..\nThe easiest hazard to avoid... just dont get trapped..";
+			deathMessage = "The spikes..\nThe easiest hazard to avoid...\njust dont get trapped..";
 		else:
 			deathMessage = "How did you die?"
 		died.emit(deathMessage)

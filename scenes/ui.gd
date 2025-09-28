@@ -26,3 +26,4 @@ func _on_game_manager_died(deathMessage: String) -> void:
 	deathReason.text = deathMessage;
 	deathReason.visible = true;
 	deathBackground.visible = true;
+	get_node("death/deathtext").show()

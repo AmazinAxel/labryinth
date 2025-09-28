@@ -17,7 +17,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [node name="ui" type="CanvasLayer"]
-layer = 0
+layer = 10
 script = ExtResource("1_nt7q6")
 
 [node name="health bar" type="ProgressBar" parent="."]
@@ -39,10 +39,29 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="deathtext" type="Label" parent="death"]
+visible = false
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = -763.0
+offset_bottom = -560.3334
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme_override_colors/font_color = Color(0.9781311, 0.44559062, 0.5198031, 1)
+theme_override_font_sizes/font_size = 25
+text = "You died"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="death reason" type="Label" parent="death"]
 visible = false
 texture_filter = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -771.0

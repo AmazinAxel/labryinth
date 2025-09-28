@@ -66,13 +66,10 @@ func check_for_spikes():
 		var tile_data = tileMap.get_cell_tile_data(coords)
 		
 		if tile_data:
-			
-			var isSpikeType = tile_data.get_custom_data("isSpikeType")
-			
-			if isSpikeType == true:
-				var manager = get_node("../../../GameManager")
-				manager.lastDamageReason = "oscar"
-				manager.health-=10
+			if tile_data.get_custom_data("isSpikeType"):
+				var manager = get_node("/root/main/GameManager")
+				manager.lastDamageReason = "spikes"
+				manager.health =- 10
 
 #func take_damage(amount: float):
 	#current_health -= amount
