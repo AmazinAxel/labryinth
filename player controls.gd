@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var friction: float = 30.0
 @export var inBarrel: bool = false
 @export var facingRight:bool = true
+@export var isAttacking: bool = false
+
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -31,7 +33,16 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("release_lock"):
 		toggle_barrel_state()
+	if event.is_action_pressed("attack") and not isAttacking:
+		attack()
 
+
+func attack():
+	# print(get_node("/root/main").get_children())
+	if (self.name == "player body"):
+		print(self)
+
+		
 func toggle_barrel_state() -> void:
 	var tileMap = get_node("/root/main/Map/Objects")
 	var coords = tileMap.local_to_map(global_position)
