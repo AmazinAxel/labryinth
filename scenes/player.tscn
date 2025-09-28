@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://gnvl3l7nwbty"]
+[gd_scene load_steps=8 format=3 uid="uid://gnvl3l7nwbty"]
 
 [ext_resource type="Script" uid="uid://c6h7koij4ryjt" path="res://player controls.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bcw7lx35vlbny" path="res://sprites/our character.png" id="2_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://lynhrfn3q68t" path="res://sounds/pickupSound.mp3" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://bk5yc8c8kij65" path="res://sounds/damage.mp3" id="4_dqkch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w48qg"]
 size = Vector2(10, 14)
@@ -37,3 +39,15 @@ position_smoothing_enabled = true
 [node name="PointLight2D" type="PointLight2D" parent="player body"]
 color = Color(0.92, 0.62376004, 0.2852, 1)
 texture = SubResource("GradientTexture2D_qhqgy")
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="player body"]
+stream = ExtResource("3_qhqgy")
+
+[node name="EnterBarrelSound" type="AudioStreamPlayer" parent="player body"]
+stream = ExtResource("3_qhqgy")
+pitch_scale = 0.6
+
+[node name="DamageSound" type="AudioStreamPlayer" parent="player body"]
+stream = ExtResource("4_dqkch")
+volume_db = -15.0
+pitch_scale = 10.0
