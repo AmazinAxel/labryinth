@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 100.0
+@export var speed: float = 80.0
 @export var detection_range: float = 100.0
 
 var player: Sprite2D
