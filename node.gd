@@ -9,9 +9,9 @@ func _process(delta: float) -> void:
 	if health <= 0:
 		var deathMessage = "";
 		if lastDamageReason == "barrel":
-			deathMessage = "Staying in the barrel will slowly kill you...\nGo outside and back to prevent death";
+			deathMessage = "The barrel..?\nStaying in the barrel\nwill slowly kill you...\nGo out and back in to prevent death";
 		elif lastDamageReason == "oscar":
-			deathMessage = "Oscar got you. He's not very kind to travellers like you!\nAttack him";
+			deathMessage = "Oscar got you.\nHe's not very kind to travellers like you!\nAttack him";
 		elif lastDamageReason == "tristan":
 			deathMessage = "You died to Tristan..\nWhen you see the blinks, enter a barrel...";
 		elif lastDamageReason == "bob":
