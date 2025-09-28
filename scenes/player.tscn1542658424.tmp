@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://uv1r3sqxrmvf"]
+
+[ext_resource type="Script" uid="uid://c6h7koij4ryjt" path="res://player controls.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://bcw7lx35vlbny" path="res://sprites/our character.png" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://biwqedt3sr6h3" path="res://scenes/hurt_box.gd" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://bggchtbp0gv76" path="res://sprites/muzzle-flash-clipart-8-removebg-preview.png" id="4_dqkch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w48qg"]
+size = Vector2(10, 14)
+
+[sub_resource type="Gradient" id="Gradient_g2els"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qhqgy"]
+gradient = SubResource("Gradient_g2els")
+width = 100
+height = 100
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(13.000001, 11)
+
+[node name="player" type="Sprite2D"]
+
+[node name="player body" type="CharacterBody2D" parent="."]
+motion_mode = 1
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player body"]
+shape = SubResource("RectangleShape2D_w48qg")
+
+[node name="Sprite2D" type="Sprite2D" parent="player body"]
+texture_filter = 1
+texture = ExtResource("2_i3pqv")
+
+[node name="Camera2D" type="Camera2D" parent="player body"]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="PointLight2D" type="PointLight2D" parent="player body"]
+color = Color(0.92, 0.62376004, 0.2852, 1)
+texture = SubResource("GradientTexture2D_qhqgy")
+
+[node name="hurtBox" type="Area2D" parent="player body"]
+position = Vector2(15, 0)
+script = ExtResource("3_qhqgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player body/hurtBox"]
+position = Vector2(-3, 0)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="player body/hurtBox/CollisionShape2D"]
+visible = false
+position = Vector2(3, 0)
+scale = Vector2(0.09412478, 0.08957239)
+texture = ExtResource("4_dqkch")
+
+[node name="Timer" type="Timer" parent="player body"]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="ready" from="." to="player body" method="_on_player_ready"]
+[connection signal="body_entered" from="player body/hurtBox" to="player body/hurtBox" method="_on_body_entered"]
+[connection signal="body_exited" from="player body/hurtBox" to="player body/hurtBox" method="_on_body_exited"]
+[connection signal="timeout" from="player body/Timer" to="player body" method="_on_timer_timeout"]
