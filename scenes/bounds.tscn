@@ -7,11 +7,27 @@ size = Vector2(57, 20)
 
 [node name="bounds" type="Node2D"]
 
+[node name="tristan3" type="Area2D" parent="."]
+script = ExtResource("1_m2lla")
+
+[node name="tristan" type="CollisionShape2D" parent="tristan3"]
+position = Vector2(18.5, 0)
+shape = SubResource("RectangleShape2D_unffu")
+
+[node name="tristan2" type="Area2D" parent="."]
+script = ExtResource("1_m2lla")
+
+[node name="tristan" type="CollisionShape2D" parent="tristan2"]
+position = Vector2(-173, -717)
+shape = SubResource("RectangleShape2D_unffu")
+
 [node name="tristan" type="Area2D" parent="."]
 script = ExtResource("1_m2lla")
 
 [node name="tristan" type="CollisionShape2D" parent="tristan"]
-position = Vector2(18.5, 0)
+position = Vector2(23, -353)
 shape = SubResource("RectangleShape2D_unffu")
 
+[connection signal="body_entered" from="tristan3" to="tristan3" method="_on_body_entered"]
+[connection signal="body_entered" from="tristan2" to="tristan2" method="_on_body_entered"]
 [connection signal="body_entered" from="tristan" to="tristan" method="_on_body_entered"]

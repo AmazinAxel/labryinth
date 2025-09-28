@@ -30,7 +30,7 @@ z_index = 1
 
 [node name="tristan" parent="." instance=ExtResource("8_2cqfq")]
 z_index = 5
-position = Vector2(0, 75)
+position = Vector2(66, 168)
 
 [node name="ui" parent="." instance=ExtResource("9_yaehf")]
 
@@ -39,9 +39,25 @@ position = Vector2(0, 75)
 [node name="Map" parent="." instance=ExtResource("9_efxa6")]
 
 [node name="bounds" parent="Map" instance=ExtResource("7_efxa6")]
-position = Vector2(143, -217)
+position = Vector2(141, -218)
 
 [node name="MusicController" parent="." instance=ExtResource("12_dg77c")]
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("12_ycdy4")
+
+[node name="tristanBlink" type="CanvasLayer" parent="."]
+visible = false
+follow_viewport_enabled = true
+
+[node name="blink overlay" type="ColorRect" parent="tristanBlink"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -501.0
+offset_top = -2080.0
+offset_right = 435.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7607843)
