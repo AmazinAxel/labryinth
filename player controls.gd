@@ -27,9 +27,9 @@ func _physics_process(delta: float) -> void:
 			var hurtShape = hurtBox.get_child(0)
 			
 			if facingRight:
-				hurtShape.position.x =-30.5
+				hurtShape.position.x =-27
 			else:
-				hurtShape.position.x=0
+				hurtShape.position.x=-3
 	
 	#print(direction.x)
 	var manager = get_node("/root/main/GameManager")
@@ -45,12 +45,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		toggle_barrel_state()
 	if event.is_action_pressed("attack") and not isAttacking:
 		attack()
-
+		print("i went")
 
 func attack():
-	
-	# print(get_node("/root/main").get_children())
 	if (self.name == "player body"):
+		var manager = get_node("/root/main/GameManager")
+		manager.lastDamageReason = "attack"
+		manager.health -= 10
 		isAttacking = true
 		print(self)
 		timer.start()
@@ -105,3 +106,5 @@ func check_for_healthPotion() -> void:
 func _on_timer_timeout() -> void:
 	isAttacking=false # Replace with function body.
 	print("we're done")
+	var attackSprite = get_node("hurtBox/CollisionShape2D/Sprite2D")
+	attackSprite.visible = false

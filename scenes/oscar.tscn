@@ -51,7 +51,7 @@ animations = [{
 size = Vector2(24, 20.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4v7cq"]
-size = Vector2(29, 26)
+size = Vector2(19, 16)
 
 [node name="oscars" type="Node2D"]
 
@@ -73,7 +73,7 @@ position = Vector2(0, 0.375)
 shape = SubResource("RectangleShape2D_j2fvy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oscar"]
-position = Vector2(0.5, 0)
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_4v7cq")
 
 [connection signal="body_entered" from="oscar/Area2D" to="oscar" method="_on_area_2d_body_entered"]

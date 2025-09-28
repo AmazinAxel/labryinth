@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c6h7koij4ryjt" path="res://player controls.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bcw7lx35vlbny" path="res://sprites/our character.png" id="2_i3pqv"]
 [ext_resource type="Script" uid="uid://biwqedt3sr6h3" path="res://scenes/hurt_box.gd" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://bggchtbp0gv76" path="res://sprites/muzzle-flash-clipart-8-removebg-preview.png" id="4_dqkch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w48qg"]
 size = Vector2(10, 14)
@@ -19,8 +20,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_qhqgy"]
+size = Vector2(13.000001, 11)
 
 [node name="player" type="Sprite2D"]
 
@@ -48,12 +48,15 @@ position = Vector2(15, 0)
 script = ExtResource("3_qhqgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player body/hurtBox"]
+position = Vector2(-3, 0)
 scale = Vector2(0.99999994, 1)
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="player body/hurtBox/CollisionShape2D"]
-scale = Vector2(20.000004, 20)
-texture = SubResource("CanvasTexture_qhqgy")
+visible = false
+position = Vector2(3, 0)
+scale = Vector2(0.09412478, 0.08957239)
+texture = ExtResource("4_dqkch")
 
 [node name="Timer" type="Timer" parent="player body"]
 wait_time = 0.3
