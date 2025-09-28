@@ -10,11 +10,11 @@ func _ready() -> void:
 	# Adjust this path to match your actual scene tree
 	player = get_node("/root/main/player/player body/Sprite2D")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if health <= 0:
 		queue_free()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not player:
 		return;
 	var distance = global_position.distance_to(player.global_position)
