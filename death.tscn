@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://4iyj6xuunv6f"]
+[gd_scene load_steps=0 format=3 uid="uid://4iyj6xuunv6f"]
 
 [node name="Death" type="Node2D"]
 
