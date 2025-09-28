@@ -13,7 +13,7 @@ func _on_body_exited(body: Node2D) -> void:
 	if body.name=="player body":
 		touchingPlayer = false
 	
-func _process(delta: float) -> void:
+func _process(_float: float) -> void:
 	if (touchingPlayer):
 		var manager = get_node("../../../GameManager")
 		manager.lastDamageReason = "oscar"
