@@ -27,6 +27,7 @@ script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player body"]
 shape = SubResource("RectangleShape2D_w48qg")
+script = ExtResource("2_qhqgy")
 
 [node name="Sprite2D" type="Sprite2D" parent="player body"]
 texture_filter = 1
