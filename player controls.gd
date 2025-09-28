@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var acceleration: float = 50.0
 @export var friction: float = 30.0
 @export var inBarrel: bool = false
+@export var facingRight:bool = true
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -12,7 +13,15 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.lerp(direction * speed, acceleration * delta)
 	else:
 		velocity = velocity.lerp(Vector2.ZERO, friction * delta)
-
+	
+	if direction.x!=0:
+		var sprites = self.get_children()
+		if len(sprites) > 0:
+			var sprite = self.get_node("Sprite2D")
+			sprite.flip_h = direction.x < 0
+			facingRight = direction.x < 0
+	
+	#print(direction.x)
 	if inBarrel:
 		velocity = Vector2.ZERO
 

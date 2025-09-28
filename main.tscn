@@ -25,6 +25,7 @@ position = Vector2(180, -142)
 
 [node name="player" parent="." instance=ExtResource("1_dg77c")]
 z_index = 1
+position = Vector2(-1, -74)
 
 [node name="timmy" parent="." instance=ExtResource("7_vivmo")]
 
