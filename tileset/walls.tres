@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://bo8j7kkgmhcgn"]
+[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://bkcdx6pj6wevc"]
 
 [ext_resource type="Texture2D" uid="uid://bs38e3iehu5q" path="res://tileset/decorative_cracks_coasts_animation.png" id="1_u6d7r"]
 [ext_resource type="Texture2D" uid="uid://dkvkto3k3xo6i" path="res://tileset/decorative_cracks_floor.png" id="2_rrfue"]
