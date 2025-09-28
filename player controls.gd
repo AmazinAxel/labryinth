@@ -1,9 +1,10 @@
 # Attach this script to your CharacterBody2D node.
 extends CharacterBody2D
 
-@export var speed = 300.0 # Max speed.
-@export var acceleration = 10.0 # How quickly the player speeds up.
-@export var friction = 10.0 # How quickly the player slows down.
+@export var speed = 100.0 # Max speed.
+@export var acceleration = 50.0 # How quickly the player speeds up.
+@export var friction = 30.0 # How quickly the player slows down.
+@export var inBarrel = false
 
 signal health_changed(new_health)
 
@@ -22,11 +23,40 @@ func _physics_process(delta):
 		velocity = velocity.lerp(direction * speed, acceleration * delta)
 	else:
 		velocity = velocity.lerp(Vector2.ZERO, friction * delta)
+	
+	if inBarrel == true:
+		velocity = Vector2.ZERO
 
 	move_and_slide()
-
+	
+func _unhandled_input(event):
+	if event.is_action_pressed("release_lock"):
+		check_for_barrel()
+		
+func check_for_barrel():
+	var map = get_node("/root/main/Map")
+	var tileMap = map.get_node("Objects")
+	var coords = tileMap.local_to_map(global_position)
+	var tile = tileMap.get_cell_source_id(coords)
+	if tile != -1: # tile isnt nil
+		var tile_data = tileMap.get_cell_tile_data(coords)
+		
+		if tile_data:
+			
+			var isBarrelType = tile_data.get_custom_data("isBarrelType")
+			
+			if isBarrelType == true:
+				if inBarrel == false:
+					var center = tileMap.map_to_local(coords)
+					global_position = center
+					inBarrel = true
+					self.visible = false
+					
+				else:
+					self.visible = true
+					inBarrel = false
+			
 func take_damage(amount: float):
-	print(current_health)
 	current_health -= amount
 
 	# Emit the signal and pass the new health value

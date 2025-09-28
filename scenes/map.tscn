@@ -930,7 +930,7 @@ texture = ExtResource("7_be0no")
 1:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0cso3"]
-custom_data_layer_0/name = "isBarrel"
+custom_data_layer_0/name = "isBarrelType"
 custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_gldc4")
 sources/1 = SubResource("TileSetAtlasSource_jh32y")
