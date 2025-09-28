@@ -33,6 +33,8 @@ func _physics_process(delta: float) -> void:
 	if manager:
 		if manager.inBarrel:
 			velocity = Vector2.ZERO
+			manager.lastDamageReason = "barrel"
+			manager.health -= 0.05
 
 	check_for_spikes()
 	check_for_healthPotion()
