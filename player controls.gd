@@ -31,11 +31,9 @@ func take_damage(amount: float):
 	health_changed.emit(current_health)
 
 	if current_health <= 0:
-		Die.die("test")
-		Diebg.diebg()
+		get_tree().change_scene_to_file("res://death.tscn")
 		died.emit()
-		
-	# queue_free() or other death logic
+		# Change scene text
 
 func _process(delta: float) -> void:
 	#current_health -= delta*.5

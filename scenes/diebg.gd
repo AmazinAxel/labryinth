@@ -1,6 +1,6 @@
 extends ColorRect
 
-@onready var myNode = $"./death reason"
+@onready var myNode = get_node('.');
 @onready var myNode2 = $"."
 
 # Called when the node enters the scene tree for the first time.
