@@ -26,7 +26,8 @@ func _physics_process(delta):
 	
 	if inBarrel == true:
 		velocity = Vector2.ZERO
-
+	
+	check_for_spikes()
 	move_and_slide()
 	
 func _unhandled_input(event):
@@ -55,9 +56,26 @@ func check_for_barrel():
 				else:
 					self.visible = true
 					inBarrel = false
+
+func check_for_spikes():
+	var map = get_node("/root/main/Map")
+	var tileMap = map.get_node("Objects")
+	var coords = tileMap.local_to_map(global_position)
+	var tile = tileMap.get_cell_source_id(coords)
+	if tile != -1: # tile isnt nil
+		var tile_data = tileMap.get_cell_tile_data(coords)
+		
+		if tile_data:
 			
-func take_damage(amount: float):
-	current_health -= amount
+			var isSpikeType = tile_data.get_custom_data("isSpikeType")
+			
+			if isSpikeType == true:
+				var manager = get_node("../../../GameManager")
+				manager.lastDamageReason = "oscar"
+				manager.health-=10
+
+#func take_damage(amount: float):
+	#current_health -= amount
 
 	# Emit the signal and pass the new health value
 	#health_changed.emit(current_health)
