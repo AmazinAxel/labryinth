@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://cd3fc3abkuhx8"]
+[gd_scene load_steps=3 format=3 uid="uid://cd3fc3abkuhx8"]
 
-[node name="timmy" type="Node2D"]
+[ext_resource type="Script" uid="uid://lsjdotihx3ml" path="res://timmy.gd" id="1_jox7d"]
+[ext_resource type="Texture2D" uid="uid://ckismtfldhnyl" path="res://sprites/timmy.png" id="1_nmf0k"]
+
+[node name="Timmy" type="CanvasLayer"]
+script = ExtResource("1_jox7d")
+
+[node name="timmySprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_nmf0k")
