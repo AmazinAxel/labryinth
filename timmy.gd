@@ -49,7 +49,7 @@ func _kill_timmy():
 	timmy_sprite.visible = false
 
 func _start_damage_loop() -> void:
-	await get_tree().create_timer(0.5).timeout  # Initial delay
+	await get_tree().create_timer(2).timeout  # Initial delay
 	while timmy_alive:
 		var manager = get_node("/root/main/GameManager")
 		manager.lastDamageReason = "timmy"

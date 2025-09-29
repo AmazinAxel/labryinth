@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://gnvl3l7nwbty"]
+[gd_scene load_steps=12 format=3 uid="uid://gnvl3l7nwbty"]
 
 [ext_resource type="Script" uid="uid://c6h7koij4ryjt" path="res://player controls.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bcw7lx35vlbny" path="res://sprites/our character.png" id="2_i3pqv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bggchtbp0gv76" path="res://sprites/muzzle-flash-clipart-8-removebg-preview.png" id="4_dqkch"]
 [ext_resource type="AudioStream" uid="uid://cs3pn5pal25xb" path="res://assets/damage.mp3" id="5_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://bhs7wq2h1os0n" path="res://assets/pickupSound.mp3" id="6_fjrip"]
+[ext_resource type="AudioStream" uid="uid://d2ghuyvkyackd" path="res://assets/spike.mp3" id="7_fjrip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w48qg"]
 size = Vector2(10, 14)
@@ -70,6 +71,10 @@ pitch_scale = 5.0
 
 [node name="PickupSound" type="AudioStreamPlayer" parent="player body"]
 stream = ExtResource("6_fjrip")
+
+[node name="SpikeSound" type="AudioStreamPlayer" parent="player body"]
+stream = ExtResource("7_fjrip")
+pitch_scale = 10.0
 
 [connection signal="ready" from="." to="player body" method="_on_player_ready"]
 [connection signal="body_entered" from="player body/hurtBox" to="player body/hurtBox" method="_on_body_entered"]
