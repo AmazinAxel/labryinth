@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 		manager.lastDamageReason = "barrel"
 		manager.health -= 0.05
 
-	check_for_spikes()
+	#check_for_spikes()
 	check_for_healthPotion()
 	move_and_slide()
 
