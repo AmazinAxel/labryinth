@@ -21,15 +21,13 @@ func _process(_delta: float) -> void:
 			idx+=1
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name =="player body":
-		print('hit myself')
-	elif (body.name =="oscar"):
+	if body.name.contains("oscar"): # Replace with function body.
 		hasOscar = true
 		oscarObj = body
 
 
 func _on_body_exited(body: Node2D) -> void:
-	if body.name=="oscar": # Replace with function body.
+	if body.name.contains("oscar"): # Replace with function body.
 		hasOscar = false
 		oscarObj=null
 		

@@ -51,7 +51,7 @@ func attack():
 	if (self.name == "player body"):
 		var manager = get_node("/root/main/GameManager")
 		manager.lastDamageReason = "attack"
-		manager.health -= 10
+		manager.health -= 5
 		isAttacking = true
 		print(self)
 		self.get_node("DamageSound").play()

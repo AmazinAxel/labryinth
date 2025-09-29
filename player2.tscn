@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1qhx7gahpp3m"]
 
-[ext_resource type="Texture2D" uid="uid://bcw7lx35vlbny" path="res://sprites/our character.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://bcw7lx35vlbny" path="res://sprites/our character.png" id="1_i25i0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w48qg"]
 size = Vector2(10, 14)
@@ -19,13 +19,14 @@ shape = SubResource("RectangleShape2D_w48qg")
 
 [node name="Sprite2D" type="Sprite2D" parent="player body"]
 texture_filter = 1
-texture = ExtResource("2_i3pqv")
+texture = ExtResource("1_i25i0")
 
 [node name="Camera2D" type="Camera2D" parent="player body"]
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
 [node name="hurt box" type="Area2D" parent="player body"]
+visible = false
 collision_layer = 2
 collision_mask = 0
 

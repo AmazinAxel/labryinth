@@ -1,9 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://usl83o0tohjj"]
+[gd_scene load_steps=34 format=3 uid="uid://usl83o0tohjj"]
 
 [ext_resource type="PackedScene" uid="uid://gnvl3l7nwbty" path="res://scenes/player.tscn" id="1_dg77c"]
 [ext_resource type="PackedScene" uid="uid://b3hrrlg5r6gm2" path="res://scenes/barrel.tscn" id="2_4c57u"]
+[ext_resource type="Script" uid="uid://8q63ea3sx7yl" path="res://oscar_2.gd" id="3_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://0nq6scd76knd" path="res://scenes/bob.tscn" id="3_efxa6"]
 [ext_resource type="PackedScene" uid="uid://l8e0jnlsost7" path="res://scenes/oscar.tscn" id="4_dg77c"]
+[ext_resource type="Texture2D" uid="uid://cllm6qj63voe4" path="res://sprites/slime_spriteTop.png" id="4_yaehf"]
+[ext_resource type="Script" uid="uid://c33gk1kk3x54w" path="res://scenes/detech player.gd" id="5_074og"]
+[ext_resource type="Script" uid="uid://bye2th5yuvpgu" path="res://scenes/oscar.gd" id="6_yaehf"]
 [ext_resource type="PackedScene" uid="uid://bkcjahxr65ll1" path="res://scenes/bounds.tscn" id="7_efxa6"]
 [ext_resource type="PackedScene" uid="uid://cd3fc3abkuhx8" path="res://scenes/timmy.tscn" id="7_vivmo"]
 [ext_resource type="PackedScene" uid="uid://dutbj2kf5xgvq" path="res://scenes/tristan.tscn" id="8_2cqfq"]
@@ -14,6 +18,104 @@
 [ext_resource type="Script" uid="uid://meqeaq01dbb" path="res://node.gd" id="12_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://cu6uvbn6wdxch" path="res://scenes/jared.tscn" id="13_ycdy4"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_blnuo"]
+atlas = ExtResource("4_yaehf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v7cq"]
+atlas = ExtResource("4_yaehf")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy24u"]
+atlas = ExtResource("4_yaehf")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg8t8"]
+atlas = ExtResource("4_yaehf")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1p63"]
+atlas = ExtResource("4_yaehf")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2cqfq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blnuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4v7cq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy24u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eg8t8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1p63")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yaehf"]
+size = Vector2(40, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_074og"]
+size = Vector2(34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
+atlas = ExtResource("4_yaehf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cegan"]
+atlas = ExtResource("4_yaehf")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82xsv"]
+atlas = ExtResource("4_yaehf")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_getpj"]
+atlas = ExtResource("4_yaehf")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryguw"]
+atlas = ExtResource("4_yaehf")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d13ii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_074og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cegan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82xsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_getpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryguw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u8w0"]
+size = Vector2(24, 20.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0odxb"]
+size = Vector2(19, 16)
+
 [node name="main" type="Node"]
 
 [node name="barrel" parent="." instance=ExtResource("2_4c57u")]
@@ -21,6 +123,270 @@
 [node name="oscar" parent="." instance=ExtResource("4_dg77c")]
 z_index = 1
 position = Vector2(161, -135)
+
+[node name="oscar2" type="CharacterBody2D" parent="oscar"]
+position = Vector2(-79, -1653)
+motion_mode = 1
+script = ExtResource("3_2cqfq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar2"]
+texture_filter = 1
+position = Vector2(7.9999995, 5.9999995)
+scale = Vector2(0.592, 0.5)
+sprite_frames = SubResource("SpriteFrames_2cqfq")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar2"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar2/Area2D"]
+position = Vector2(8, 6.5)
+shape = SubResource("RectangleShape2D_yaehf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar2"]
+position = Vector2(7, 6)
+shape = SubResource("RectangleShape2D_074og")
+
+[node name="oscar3" type="CharacterBody2D" parent="oscar"]
+position = Vector2(-112, -180)
+motion_mode = 1
+script = ExtResource("6_yaehf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar3"]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, -1.1920929e-07)
+scale = Vector2(0.37890628, 0.32031247)
+sprite_frames = SubResource("SpriteFrames_d13ii")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar3"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar3/Area2D"]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_1u8w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar3"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0odxb")
+
+[node name="oscar4" type="CharacterBody2D" parent="oscar"]
+position = Vector2(-6, -377)
+motion_mode = 1
+script = ExtResource("6_yaehf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar4"]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, -1.1920929e-07)
+scale = Vector2(0.37890628, 0.32031247)
+sprite_frames = SubResource("SpriteFrames_d13ii")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar4"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar4/Area2D"]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_1u8w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar4"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0odxb")
+
+[node name="oscar5" type="CharacterBody2D" parent="oscar"]
+position = Vector2(-233, -547)
+motion_mode = 1
+script = ExtResource("6_yaehf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar5"]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, -1.1920929e-07)
+scale = Vector2(0.37890628, 0.32031247)
+sprite_frames = SubResource("SpriteFrames_d13ii")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar5"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar5/Area2D"]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_1u8w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar5"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0odxb")
+
+[node name="oscar6" type="CharacterBody2D" parent="oscar"]
+position = Vector2(-200, -922)
+motion_mode = 1
+script = ExtResource("6_yaehf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar6"]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, -1.1920929e-07)
+scale = Vector2(0.37890628, 0.32031247)
+sprite_frames = SubResource("SpriteFrames_d13ii")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar6"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar6/Area2D"]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_1u8w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar6"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0odxb")
+
+[node name="oscar7" type="CharacterBody2D" parent="oscar"]
+position = Vector2(-195, -1088)
+motion_mode = 1
+script = ExtResource("6_yaehf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar7"]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, -1.1920929e-07)
+scale = Vector2(0.37890628, 0.32031247)
+sprite_frames = SubResource("SpriteFrames_d13ii")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar7"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7/Area2D"]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_1u8w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0odxb")
+
+[node name="oscar3" type="CharacterBody2D" parent="oscar/oscar7"]
+position = Vector2(122, -56)
+motion_mode = 1
+script = ExtResource("6_yaehf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar7/oscar3"]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, -1.1920929e-07)
+scale = Vector2(0.37890628, 0.32031247)
+sprite_frames = SubResource("SpriteFrames_d13ii")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar7/oscar3"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7/oscar3/Area2D"]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_1u8w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7/oscar3"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0odxb")
+
+[node name="oscar3" type="CharacterBody2D" parent="oscar/oscar7/oscar3"]
+position = Vector2(-280, -163)
+motion_mode = 1
+script = ExtResource("6_yaehf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar7/oscar3/oscar3"]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, -1.1920929e-07)
+scale = Vector2(0.37890628, 0.32031247)
+sprite_frames = SubResource("SpriteFrames_d13ii")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar7/oscar3/oscar3"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7/oscar3/oscar3/Area2D"]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_1u8w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7/oscar3/oscar3"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0odxb")
+
+[node name="oscar7" type="CharacterBody2D" parent="oscar/oscar7"]
+position = Vector2(65, -655)
+motion_mode = 1
+script = ExtResource("6_yaehf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar7/oscar7"]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, -1.1920929e-07)
+scale = Vector2(0.37890628, 0.32031247)
+sprite_frames = SubResource("SpriteFrames_d13ii")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar7/oscar7"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7/oscar7/Area2D"]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_1u8w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7/oscar7"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0odxb")
+
+[node name="oscar8" type="CharacterBody2D" parent="oscar"]
+position = Vector2(-125, -2869)
+motion_mode = 1
+script = ExtResource("6_yaehf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar8"]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, -1.1920929e-07)
+scale = Vector2(0.37890628, 0.32031247)
+sprite_frames = SubResource("SpriteFrames_d13ii")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar8"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar8/Area2D"]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_1u8w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar8"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0odxb")
+
+[node name="oscar3" type="CharacterBody2D" parent="oscar/oscar8"]
+position = Vector2(-280, -163)
+motion_mode = 1
+script = ExtResource("6_yaehf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar8/oscar3"]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, -1.1920929e-07)
+scale = Vector2(0.37890628, 0.32031247)
+sprite_frames = SubResource("SpriteFrames_d13ii")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar8/oscar3"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar8/oscar3/Area2D"]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_1u8w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar8/oscar3"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0odxb")
+
+[node name="oscar9" type="CharacterBody2D" parent="oscar"]
+position = Vector2(-196, -2825)
+motion_mode = 1
+script = ExtResource("6_yaehf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar9"]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, -1.1920929e-07)
+scale = Vector2(0.37890628, 0.32031247)
+sprite_frames = SubResource("SpriteFrames_d13ii")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar9"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar9/Area2D"]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_1u8w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar9"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0odxb")
 
 [node name="player" parent="." instance=ExtResource("1_dg77c")]
 z_index = 1
@@ -83,4 +449,64 @@ position = Vector2(15, 174)
 
 [node name="jared" parent="." instance=ExtResource("13_ycdy4")]
 
+[connection signal="body_entered" from="oscar/oscar2/Area2D" to="oscar/oscar2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar2/Area2D" to="oscar/oscar2" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar2/Area2D" to="oscar/oscar2/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar2/Area2D" to="oscar/oscar2" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar2/Area2D" to="oscar/oscar2/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="oscar/oscar3/Area2D" to="oscar/oscar3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar3/Area2D" to="oscar/oscar3" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar3/Area2D" to="oscar/oscar3/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar3/Area2D" to="oscar/oscar3" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar3/Area2D" to="oscar/oscar3/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="oscar/oscar4/Area2D" to="oscar/oscar4" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar4/Area2D" to="oscar/oscar4" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar4/Area2D" to="oscar/oscar4/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar4/Area2D" to="oscar/oscar4" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar4/Area2D" to="oscar/oscar4/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="oscar/oscar5/Area2D" to="oscar/oscar5" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar5/Area2D" to="oscar/oscar5" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar5/Area2D" to="oscar/oscar5/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar5/Area2D" to="oscar/oscar5" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar5/Area2D" to="oscar/oscar5/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="oscar/oscar6/Area2D" to="oscar/oscar6" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar6/Area2D" to="oscar/oscar6" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar6/Area2D" to="oscar/oscar6/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar6/Area2D" to="oscar/oscar6" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar6/Area2D" to="oscar/oscar6/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="oscar/oscar7/Area2D" to="oscar/oscar7" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar7/Area2D" to="oscar/oscar7" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar7/Area2D" to="oscar/oscar7/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar7/Area2D" to="oscar/oscar7" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar7/Area2D" to="oscar/oscar7/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="oscar/oscar7/oscar3/Area2D" to="oscar/oscar7/oscar3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar7/oscar3/Area2D" to="oscar/oscar7/oscar3" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar7/oscar3/Area2D" to="oscar/oscar7/oscar3/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar7/oscar3/Area2D" to="oscar/oscar7/oscar3" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar7/oscar3/Area2D" to="oscar/oscar7/oscar3/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="oscar/oscar7/oscar3/oscar3/Area2D" to="oscar/oscar7/oscar3/oscar3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar7/oscar3/oscar3/Area2D" to="oscar/oscar7/oscar3/oscar3" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar7/oscar3/oscar3/Area2D" to="oscar/oscar7/oscar3/oscar3/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar7/oscar3/oscar3/Area2D" to="oscar/oscar7/oscar3/oscar3" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar7/oscar3/oscar3/Area2D" to="oscar/oscar7/oscar3/oscar3/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="oscar/oscar8/Area2D" to="oscar/oscar8" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar8/Area2D" to="oscar/oscar8" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar8/Area2D" to="oscar/oscar8/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar8/Area2D" to="oscar/oscar8" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar8/Area2D" to="oscar/oscar8/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="oscar/oscar9/Area2D" to="oscar/oscar9" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar9/Area2D" to="oscar/oscar9" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar9/Area2D" to="oscar/oscar9/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar9/Area2D" to="oscar/oscar9" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar9/Area2D" to="oscar/oscar9/Area2D" method="_on_body_exited"]
 [connection signal="died" from="GameManager" to="ui" method="_on_game_manager_died"]
