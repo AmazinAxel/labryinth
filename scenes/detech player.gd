@@ -16,7 +16,8 @@ func _on_body_exited(body: Node2D) -> void:
 		touchingPlayer = false
 	
 func _process(_float: float) -> void:
-	if (touchingPlayer):
-		var manager = get_node("../../../GameManager")
+	var manager = get_node("/root/main/GameManager")
+	
+	if (touchingPlayer and not manager.inBarrel):
 		manager.lastDamageReason = "oscar"
 		manager.health-=.1
