@@ -30,5 +30,3 @@ func _on_body_exited(body: Node2D) -> void:
 	if body.name.contains("oscar"): # Replace with function body.
 		hasOscar = false
 		oscarObj=null
-		
-	
