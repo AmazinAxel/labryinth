@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dhp80uerpc2v1" path="res://sprites/bob.png" id="2_gqs4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2t6t"]
-size = Vector2(1023, 199)
+size = Vector2(1023, 65)
 
 [node name="bob" type="CharacterBody2D"]
 z_index = 2
@@ -15,7 +15,7 @@ script = ExtResource("1_gqs4f")
 script = ExtResource("1_kf1ye")
 
 [node name="bob collision" type="CollisionShape2D" parent="bob"]
-position = Vector2(-0.5, 0.5)
+position = Vector2(-0.5, -66.5)
 shape = SubResource("RectangleShape2D_i2t6t")
 
 [node name="bob body" type="Sprite2D" parent="."]
