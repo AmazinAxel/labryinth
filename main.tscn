@@ -275,7 +275,7 @@ position = Vector2(0, 0.375)
 shape = SubResource("RectangleShape2D_1u8w0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7/oscar7"]
-position = Vector2(-0.5, 0)
+position = Vector2(2, 9)
 shape = SubResource("RectangleShape2D_0odxb")
 
 [node name="oscar8" type="CharacterBody2D" parent="oscar"]
