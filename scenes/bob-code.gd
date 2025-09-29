@@ -1,8 +1,7 @@
 extends Node2D
 
-@onready var bob = $"../../../bob";
-
 func _on_body_entered(body: Node2D) -> void:
+	var bob = $"../../../bob";
 	if body.name == "player body":
 		bob.direction = "up";
 		bob.global_position.y = PlayerControls.global_position.y + 1000

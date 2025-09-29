@@ -98,12 +98,13 @@ vertical_alignment = 1
 [node name="try again button" type="Button" parent="death"]
 visible = false
 texture_filter = 1
-offset_left = 468.0
-offset_top = 526.0
-offset_right = 579.0
-offset_bottom = 564.0
-scale = Vector2(2, 2)
-text = "Try again"
+offset_left = 456.0
+offset_top = 481.0
+offset_right = 961.71423
+offset_bottom = 655.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 100
+text = "Restart game to play again"
 script = ExtResource("3_yev5y")
 
 [node name="win" type="ColorRect" parent="."]
