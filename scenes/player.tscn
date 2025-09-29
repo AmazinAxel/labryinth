@@ -30,6 +30,12 @@ size = Vector2(13.000001, 11)
 [node name="player body" type="CharacterBody2D" parent="."]
 motion_mode = 1
 script = ExtResource("1_onrkg")
+speed = null
+acceleration = null
+friction = null
+inBarrel = null
+facingRight = null
+isAttacking = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player body"]
 shape = SubResource("RectangleShape2D_w48qg")

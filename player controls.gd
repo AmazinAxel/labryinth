@@ -80,18 +80,18 @@ func toggle_barrel_state() -> void:
 				visible = !manager.inBarrel
 				self.get_node("PickupSound").play()
 
-func check_for_spikes() -> void:
-	var tileMap = get_node("/root/main/Map/Objects")
-	if tileMap:
-		var coords = tileMap.local_to_map(global_position)
-		var tile = tileMap.get_cell_source_id(coords)
-
-		if tile != -1:
-			var tile_data = tileMap.get_cell_tile_data(coords)
-			if tile_data and tile_data.get_custom_data("isSpikeType"):
-				var manager = get_node("/root/main/GameManager")
-				manager.lastDamageReason = "spikes"
-				manager.health -= 10;
+#func check_for_spikes() -> void:
+#	var tileMap = get_node("/root/main/Map/Objects")
+#	if tileMap:
+#		var coords = tileMap.local_to_map(global_position)
+#		var tile = tileMap.get_cell_source_id(coords)
+#
+#		if tile != -1:
+#			var tile_data = tileMap.get_cell_tile_data(coords)
+#			if tile_data and tile_data.get_custom_data("isSpikeType"):
+#				var manager = get_node("/root/main/GameManager")
+#				manager.lastDamageReason = "spikes"
+#				manager.health -= 10;
 			
 func check_for_healthPotion() -> void:
 	var tileMap = get_node("/root/main/Map/Objects")
