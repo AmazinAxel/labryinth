@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://gnvl3l7nwbty" path="res://scenes/player.tscn" id="1_dg77c"]
 [ext_resource type="PackedScene" uid="uid://b3hrrlg5r6gm2" path="res://scenes/barrel.tscn" id="2_4c57u"]
-[ext_resource type="Script" uid="uid://8q63ea3sx7yl" path="res://oscar_2.gd" id="3_2cqfq"]
+[ext_resource type="Script" path="res://oscar_2.gd" id="3_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://0nq6scd76knd" path="res://scenes/bob.tscn" id="3_efxa6"]
 [ext_resource type="PackedScene" uid="uid://l8e0jnlsost7" path="res://scenes/oscar.tscn" id="4_dg77c"]
 [ext_resource type="Texture2D" uid="uid://cllm6qj63voe4" path="res://sprites/slime_spriteTop.png" id="4_yaehf"]
@@ -213,7 +213,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_0odxb")
 
 [node name="oscar6" type="CharacterBody2D" parent="oscar"]
-position = Vector2(-200, -922)
+position = Vector2(-193, -821)
 motion_mode = 1
 script = ExtResource("6_yaehf")
 
@@ -253,50 +253,6 @@ position = Vector2(0, 0.375)
 shape = SubResource("RectangleShape2D_1u8w0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7"]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_0odxb")
-
-[node name="oscar3" type="CharacterBody2D" parent="oscar/oscar7"]
-position = Vector2(122, -56)
-motion_mode = 1
-script = ExtResource("6_yaehf")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar7/oscar3"]
-texture_filter = 1
-position = Vector2(-2.9802322e-08, -1.1920929e-07)
-scale = Vector2(0.37890628, 0.32031247)
-sprite_frames = SubResource("SpriteFrames_d13ii")
-
-[node name="Area2D" type="Area2D" parent="oscar/oscar7/oscar3"]
-script = ExtResource("5_074og")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7/oscar3/Area2D"]
-position = Vector2(0, 0.375)
-shape = SubResource("RectangleShape2D_1u8w0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7/oscar3"]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_0odxb")
-
-[node name="oscar3" type="CharacterBody2D" parent="oscar/oscar7/oscar3"]
-position = Vector2(-280, -163)
-motion_mode = 1
-script = ExtResource("6_yaehf")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar7/oscar3/oscar3"]
-texture_filter = 1
-position = Vector2(-2.9802322e-08, -1.1920929e-07)
-scale = Vector2(0.37890628, 0.32031247)
-sprite_frames = SubResource("SpriteFrames_d13ii")
-
-[node name="Area2D" type="Area2D" parent="oscar/oscar7/oscar3/oscar3"]
-script = ExtResource("5_074og")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7/oscar3/oscar3/Area2D"]
-position = Vector2(0, 0.375)
-shape = SubResource("RectangleShape2D_1u8w0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7/oscar3/oscar3"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_0odxb")
 
@@ -388,6 +344,50 @@ shape = SubResource("RectangleShape2D_1u8w0")
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_0odxb")
 
+[node name="oscar10" type="CharacterBody2D" parent="oscar"]
+position = Vector2(-73, -1144)
+motion_mode = 1
+script = ExtResource("6_yaehf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar10"]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, -1.1920929e-07)
+scale = Vector2(0.37890628, 0.32031247)
+sprite_frames = SubResource("SpriteFrames_d13ii")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar10"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar10/Area2D"]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_1u8w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar10"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0odxb")
+
+[node name="oscar3" type="CharacterBody2D" parent="oscar/oscar10"]
+position = Vector2(-280, -163)
+motion_mode = 1
+script = ExtResource("6_yaehf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar10/oscar3"]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, -1.1920929e-07)
+scale = Vector2(0.37890628, 0.32031247)
+sprite_frames = SubResource("SpriteFrames_d13ii")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar10/oscar3"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar10/oscar3/Area2D"]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_1u8w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar10/oscar3"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0odxb")
+
 [node name="player" parent="." instance=ExtResource("1_dg77c")]
 z_index = 1
 position = Vector2(-1, -74)
@@ -449,64 +449,64 @@ position = Vector2(15, 174)
 
 [node name="jared" parent="." instance=ExtResource("13_ycdy4")]
 
-[connection signal="body_entered" from="oscar/oscar2/Area2D" to="oscar/oscar2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar2/Area2D" to="oscar/oscar2" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar2/Area2D" to="oscar/oscar2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar2/Area2D" to="oscar/oscar2/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar2/Area2D" to="oscar/oscar2" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar2/Area2D" to="oscar/oscar2/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar3/Area2D" to="oscar/oscar3" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar3/Area2D" to="oscar/oscar3" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar3/Area2D" to="oscar/oscar3" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar3/Area2D" to="oscar/oscar3/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar3/Area2D" to="oscar/oscar3" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar3/Area2D" to="oscar/oscar3/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar4/Area2D" to="oscar/oscar4" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar4/Area2D" to="oscar/oscar4" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar4/Area2D" to="oscar/oscar4" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar4/Area2D" to="oscar/oscar4/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar4/Area2D" to="oscar/oscar4" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar4/Area2D" to="oscar/oscar4/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar5/Area2D" to="oscar/oscar5" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar5/Area2D" to="oscar/oscar5" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar5/Area2D" to="oscar/oscar5" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar5/Area2D" to="oscar/oscar5/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar5/Area2D" to="oscar/oscar5" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar5/Area2D" to="oscar/oscar5/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar6/Area2D" to="oscar/oscar6" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar6/Area2D" to="oscar/oscar6" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar6/Area2D" to="oscar/oscar6" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar6/Area2D" to="oscar/oscar6/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar6/Area2D" to="oscar/oscar6" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar6/Area2D" to="oscar/oscar6/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar7/Area2D" to="oscar/oscar7" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar7/Area2D" to="oscar/oscar7" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar7/Area2D" to="oscar/oscar7" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar7/Area2D" to="oscar/oscar7/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar7/Area2D" to="oscar/oscar7" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar7/Area2D" to="oscar/oscar7/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar7/oscar3/Area2D" to="oscar/oscar7/oscar3" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="oscar/oscar7/oscar3/Area2D" to="oscar/oscar7/oscar3" method="_on_body_entered"]
-[connection signal="body_entered" from="oscar/oscar7/oscar3/Area2D" to="oscar/oscar7/oscar3/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="oscar/oscar7/oscar3/Area2D" to="oscar/oscar7/oscar3" method="_on_area_2d_body_exited"]
-[connection signal="body_exited" from="oscar/oscar7/oscar3/Area2D" to="oscar/oscar7/oscar3/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar7/oscar3/oscar3/Area2D" to="oscar/oscar7/oscar3/oscar3" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="oscar/oscar7/oscar3/oscar3/Area2D" to="oscar/oscar7/oscar3/oscar3" method="_on_body_entered"]
-[connection signal="body_entered" from="oscar/oscar7/oscar3/oscar3/Area2D" to="oscar/oscar7/oscar3/oscar3/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="oscar/oscar7/oscar3/oscar3/Area2D" to="oscar/oscar7/oscar3/oscar3" method="_on_area_2d_body_exited"]
-[connection signal="body_exited" from="oscar/oscar7/oscar3/oscar3/Area2D" to="oscar/oscar7/oscar3/oscar3/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar8/Area2D" to="oscar/oscar8" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar8/Area2D" to="oscar/oscar8" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar8/Area2D" to="oscar/oscar8" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar8/Area2D" to="oscar/oscar8/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar8/Area2D" to="oscar/oscar8" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar8/Area2D" to="oscar/oscar8/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar9/Area2D" to="oscar/oscar9" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar9/Area2D" to="oscar/oscar9" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar9/Area2D" to="oscar/oscar9" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar9/Area2D" to="oscar/oscar9/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar9/Area2D" to="oscar/oscar9" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar9/Area2D" to="oscar/oscar9/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="oscar/oscar10/Area2D" to="oscar/oscar10" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar10/Area2D" to="oscar/oscar10" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar10/Area2D" to="oscar/oscar10/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar10/Area2D" to="oscar/oscar10" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar10/Area2D" to="oscar/oscar10/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="oscar/oscar10/oscar3/Area2D" to="oscar/oscar10/oscar3" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar10/oscar3/Area2D" to="oscar/oscar10/oscar3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar10/oscar3/Area2D" to="oscar/oscar10/oscar3/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar10/oscar3/Area2D" to="oscar/oscar10/oscar3" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar10/oscar3/Area2D" to="oscar/oscar10/oscar3/Area2D" method="_on_body_exited"]
 [connection signal="died" from="GameManager" to="ui" method="_on_game_manager_died"]

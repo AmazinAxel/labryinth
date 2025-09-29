@@ -104,7 +104,7 @@ func check_for_healthPotion() -> void:
 			if tile_data and tile_data.get_custom_data("isHealthPotionType"):
 				var manager = get_node("/root/main/GameManager")
 				
-				manager.health += 20;
+				manager.health += 50;
 				self.get_node("PickupSound").play()
 				tileMap.set_cell(coords, -1)
 

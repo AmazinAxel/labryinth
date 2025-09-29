@@ -27,4 +27,4 @@ func _on_game_manager_died(deathMessage: String) -> void:
 	deathReason.show();
 	deathBackground.show();
 	get_node("death/deathtext").show()
-	get_node("death/try again button").show()
+	#get_node("death/try again button").show()
