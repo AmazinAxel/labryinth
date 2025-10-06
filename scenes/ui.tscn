@@ -146,15 +146,6 @@ offset_right = 0.41589355
 offset_bottom = 0.023986816
 color = Color(0.41960785, 0.85882354, 0.4745098, 0.34901962)
 
-[node name="Win2" type="Sprite2D" parent="win"]
-position = Vector2(1000, 504)
-rotation = 4.712389
-texture = ExtResource("4_gdt2y")
-
-[node name="Win" type="Sprite2D" parent="win"]
-position = Vector2(168, 499)
-texture = ExtResource("4_gdt2y")
-
 [node name="win text" type="Label" parent="win"]
 layout_mode = 1
 anchors_preset = -1
@@ -170,9 +161,35 @@ scale = Vector2(0.5, 0.5)
 text = "You win!!"
 label_settings = SubResource("LabelSettings_gdt2y")
 
+[node name="Win" type="TextureRect" parent="win"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.642
+anchor_top = 0.372
+anchor_right = 1.069
+anchor_bottom = 1.116
+offset_left = 0.57598877
+offset_top = 0.015991211
+offset_right = 0.13195801
+offset_bottom = 0.047973633
+texture = ExtResource("4_gdt2y")
+flip_h = true
+
+[node name="Win2" type="TextureRect" parent="win"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.071
+anchor_top = 0.372
+anchor_right = 0.33800003
+anchor_bottom = 1.116
+offset_left = 0.21200562
+offset_top = 0.015991211
+offset_right = 20.863953
+offset_bottom = 0.047973633
+texture = ExtResource("4_gdt2y")
+
 [node name="start" type="CanvasLayer" parent="."]
 layer = 14
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="start"]
 anchors_preset = 15
