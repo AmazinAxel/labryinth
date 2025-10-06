@@ -7,4 +7,4 @@ func _on_body_entered(body: Node2D) -> void:
 		# Kill player if they're not in a barrel
 		if manager.inBarrel == false:
 			manager.lastDamageReason = "tristan"
-			manager.health -= 100
+			manager.health -= 200

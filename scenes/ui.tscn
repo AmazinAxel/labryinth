@@ -66,12 +66,12 @@ color = Color(0, 0, 0, 1)
 [node name="deathtext" type="Label" parent="death"]
 visible = false
 texture_filter = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_right = 1.0020001
+anchor_bottom = 0.29500002
 offset_left = 0.9999962
-offset_right = 290.24988
-offset_bottom = -409.25
+offset_right = 287.9458
+offset_bottom = 47.589996
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
@@ -84,13 +84,17 @@ vertical_alignment = 1
 visible = false
 texture_filter = 1
 anchors_preset = -1
-anchor_bottom = 0.356
-offset_right = 2308.0
-offset_bottom = 1073.312
+anchor_top = 0.24100001
+anchor_right = 0.99300003
+anchor_bottom = 0.69600004
+offset_left = 8.0
+offset_top = -0.16801453
+offset_right = 1136.064
+offset_bottom = 294.99197
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0.9781311, 0.44559062, 0.5198031, 1)
 theme_override_font_sizes/font_size = 25
-text = "You died"
+text = "(Custom death text here)"
 label_settings = SubResource("LabelSettings_x4jx1")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -98,63 +102,114 @@ vertical_alignment = 1
 [node name="try again button" type="Button" parent="death"]
 visible = false
 texture_filter = 1
-offset_left = 456.0
-offset_top = 481.0
-offset_right = 961.71423
-offset_bottom = 655.0
+anchors_preset = -1
+anchor_left = 0.23200001
+anchor_top = 0.707
+anchor_right = 0.79300004
+anchor_bottom = 0.841
+offset_left = -0.26400757
+offset_top = -0.13601685
+offset_right = 647.4639
+offset_bottom = 87.03198
 scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 100
-text = "Restart game to play again"
+text = "Try again"
 script = ExtResource("3_yev5y")
+
+[node name="deathtext2" type="Label" parent="death"]
+visible = false
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.19600001
+anchor_top = 0.88100004
+anchor_right = 0.84300005
+anchor_bottom = 0.95600003
+offset_left = 0.20799255
+offset_top = 0.11199951
+offset_right = 1736.864
+offset_bottom = 113.51196
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "(Dying is part of the game! You must learn this way)"
+label_settings = SubResource("LabelSettings_x4jx1")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="win" type="ColorRect" parent="."]
 visible = false
 z_index = 5
-offset_right = 1172.0
-offset_bottom = 672.0
+anchors_preset = -1
+anchor_right = 1.0170001
+anchor_bottom = 1.0370001
+offset_right = 0.41589355
+offset_bottom = 0.023986816
 color = Color(0.41960785, 0.85882354, 0.4745098, 0.34901962)
 
 [node name="Win2" type="Sprite2D" parent="win"]
-position = Vector2(980, 479)
+position = Vector2(1000, 504)
 rotation = 4.712389
 texture = ExtResource("4_gdt2y")
 
 [node name="Win" type="Sprite2D" parent="win"]
-position = Vector2(167, 483)
+position = Vector2(168, 499)
 texture = ExtResource("4_gdt2y")
 
 [node name="win text" type="Label" parent="win"]
-layout_mode = 0
-offset_left = 356.0
-offset_top = 86.0
-offset_right = 1298.0
-offset_bottom = 359.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.31100002
+anchor_top = 0.347
+anchor_right = 0.69500005
+anchor_bottom = 0.55
+offset_left = 0.5079651
+offset_top = -0.18400574
+offset_right = 448.45996
+offset_bottom = 136.4
 scale = Vector2(0.5, 0.5)
 text = "You win!!"
 label_settings = SubResource("LabelSettings_gdt2y")
 
 [node name="start" type="CanvasLayer" parent="."]
 layer = 14
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="start"]
-offset_right = 1162.0
-offset_bottom = 665.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.1769838, 0.118366756, 0, 1)
 
 [node name="Button" type="Button" parent="start"]
-offset_left = 323.0
-offset_top = 365.0
-offset_right = 790.0
-offset_bottom = 458.0
+anchors_preset = -1
+anchor_left = 0.28
+anchor_top = 0.563
+anchor_right = 0.68600005
+anchor_bottom = 0.707
+offset_left = 0.44000244
+offset_top = 0.17599487
+offset_right = -0.2720337
+offset_bottom = -0.13601685
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "Play"
 script = ExtResource("5_wm3ai")
 
 [node name="Label2" type="Label" parent="start"]
-offset_left = 339.0
-offset_top = 513.99994
-offset_right = 2537.0
-offset_bottom = 927.0
+anchors_preset = -1
+anchor_left = 0.294
+anchor_top = 0.79300004
+anchor_right = 0.67600006
+anchor_bottom = 0.92100006
+offset_left = 0.31201172
+offset_top = 0.1359253
+offset_right = 1758.2479
+offset_bottom = 330.19196
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.2, 0.2)
 text = "Made by Owen, Alec & Vaughn
 Daydream Seattle 2025"
@@ -162,9 +217,15 @@ label_settings = SubResource("LabelSettings_8dubc")
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="start"]
-offset_top = 60.0
-offset_right = 1155.0
-offset_bottom = 328.0
+anchors_preset = -1
+anchor_top = 0.093
+anchor_right = 1.0
+anchor_bottom = 0.50600004
+offset_top = -0.26399994
+offset_right = 3.0
+offset_bottom = 0.111968994
+grow_horizontal = 2
+grow_vertical = 2
 text = "Labyrinth"
 label_settings = SubResource("LabelSettings_8dubc")
 horizontal_alignment = 1
