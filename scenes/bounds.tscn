@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkcjahxr65ll1"]
+[gd_scene load_steps=9 format=3 uid="uid://bkcjahxr65ll1"]
 
 [ext_resource type="Script" uid="uid://ctecnusijuygd" path="res://scenes/bounds.gd" id="1_iveam"]
 [ext_resource type="Script" uid="uid://dwdqje7i8lm0f" path="res://scenes/tristan.gd" id="1_m2lla"]
+[ext_resource type="Script" uid="uid://djnc8kr8uryt4" path="res://scenes/tristan_2.gd" id="3_dmyop"]
+[ext_resource type="Script" uid="uid://lce58jr065dy" path="res://scenes/tristan_3.gd" id="3_oifvq"]
 [ext_resource type="Script" uid="uid://ci5ebk2crorvd" path="res://scenes/bob-code.gd" id="3_q3qen"]
 [ext_resource type="Script" uid="uid://blr43g1kbw04j" path="res://scenes/win.gd" id="4_orywa"]
 
@@ -22,24 +24,24 @@ position = Vector2(-64, -1426)
 shape = SubResource("RectangleShape2D_unffu")
 
 [node name="tristan3" type="Area2D" parent="."]
-script = ExtResource("1_m2lla")
+script = ExtResource("3_oifvq")
 
 [node name="tristan" type="CollisionShape2D" parent="tristan3"]
-position = Vector2(18.5, 0)
+position = Vector2(-173, -717)
 shape = SubResource("RectangleShape2D_unffu")
 
 [node name="tristan2" type="Area2D" parent="."]
-script = ExtResource("1_m2lla")
+script = ExtResource("3_dmyop")
 
 [node name="tristan" type="CollisionShape2D" parent="tristan2"]
-position = Vector2(-173, -717)
+position = Vector2(23, -353)
 shape = SubResource("RectangleShape2D_unffu")
 
 [node name="tristan" type="Area2D" parent="."]
 script = ExtResource("1_m2lla")
 
 [node name="tristan" type="CollisionShape2D" parent="tristan"]
-position = Vector2(23, -353)
+position = Vector2(18.5, 0)
 shape = SubResource("RectangleShape2D_unffu")
 
 [node name="win" type="Area2D" parent="."]

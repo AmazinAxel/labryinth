@@ -1,6 +1,6 @@
 extends Node2D
 
-var thisStage = 1;
+var thisStage = 2;
 
 func _on_body_entered(body: Node2D) -> void:
 	var tristan = $"../../../tristan/CharacterBody2D";

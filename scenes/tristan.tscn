@@ -20,6 +20,8 @@ position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_fcjgn")
 
 [node name="tristan body" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(0, 1)
+scale = Vector2(2, 2)
 texture = ExtResource("2_y4e1f")
 
 [connection signal="ready" from="." to="CharacterBody2D" method="_on_tristan_ready"]

@@ -3,6 +3,7 @@ extends Node
 @export var health = 100
 @export var lastDamageReason = ""
 @export var inBarrel = false;
+@export var gameStage = 0;
 var isDead = false;
 
 signal died
