@@ -1,11 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://0nq6scd76knd"]
+[gd_scene load_steps=8 format=3 uid="uid://0nq6scd76knd"]
 
 [ext_resource type="Script" uid="uid://bls5ktng6y2ro" path="res://scenes/bob.gd" id="1_gqs4f"]
 [ext_resource type="Script" uid="uid://blhyfeqlvbqm8" path="res://scenes/bob-collision.gd" id="1_kf1ye"]
-[ext_resource type="Texture2D" uid="uid://dhp80uerpc2v1" path="res://sprites/bob.png" id="2_gqs4f"]
+[ext_resource type="Texture2D" uid="uid://deoovbsjld2fl" path="res://sprites/lightning.png" id="3_gqs4f"]
+[ext_resource type="AudioStream" uid="uid://b5en0kir5rmpt" path="res://assets/tristanNearby.mp3" id="4_i2t6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2t6t"]
 size = Vector2(688, 65)
+
+[sub_resource type="Gradient" id="Gradient_i2t6t"]
+offsets = PackedFloat32Array(0.104166664, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_eiv2h"]
+gradient = SubResource("Gradient_i2t6t")
 
 [node name="bob" type="CharacterBody2D"]
 z_index = 2
@@ -19,8 +27,40 @@ position = Vector2(6, -66.5)
 shape = SubResource("RectangleShape2D_i2t6t")
 
 [node name="bob body" type="Sprite2D" parent="."]
-position = Vector2(5.999996, -66.5)
-scale = Vector2(1.3437501, 0.65)
-texture = ExtResource("2_gqs4f")
+modulate = Color(0, 0.28344247, 0.37521726, 1)
+z_index = 2
+position = Vector2(5.0000005, -67.00001)
+scale = Vector2(2.683594, 65.567505)
+texture = SubResource("GradientTexture1D_eiv2h")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 1
+position = Vector2(1, -67)
+amount = 70
+texture = ExtResource("3_gqs4f")
+lifetime = 0.2
+speed_scale = 0.7
+explosiveness = 0.47
+emission_shape = 3
+emission_rect_extents = Vector2(300, 30)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 216.48
+initial_velocity_max = 373.62
+angular_velocity_min = -370.29
+angular_velocity_max = 185.14
+angle_min = -411.4
+angle_max = 678.9
+scale_amount_min = 0.0
+scale_amount_max = 0.01
+hue_variation_min = 0.69
+hue_variation_max = 1.0
+
+[node name="bobNearby" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_i2t6t")
+volume_db = 10.0
+pitch_scale = 7.0
+attenuation = 10.0
+parameters/looping = true
 
 [connection signal="body_entered" from="bob" to="bob" method="_on_body_entered"]

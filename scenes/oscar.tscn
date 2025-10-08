@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://l8e0jnlsost7"]
+[gd_scene load_steps=13 format=3 uid="uid://l8e0jnlsost7"]
 
 [ext_resource type="Script" uid="uid://bye2th5yuvpgu" path="res://scenes/oscar.gd" id="1_blnuo"]
 [ext_resource type="Texture2D" uid="uid://cllm6qj63voe4" path="res://sprites/slime_spriteTop.png" id="2_4v7cq"]
+[ext_resource type="AudioStream" uid="uid://co5vg856yhw3x" path="res://assets/oscarDeath.mp3" id="2_iy24u"]
 [ext_resource type="Script" uid="uid://c33gk1kk3x54w" path="res://scenes/detech player.gd" id="3_4v7cq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_blnuo"]
@@ -79,8 +80,11 @@ shape = SubResource("RectangleShape2D_4v7cq")
 one_way_collision = true
 one_way_collision_margin = 0.0
 
-[connection signal="body_entered" from="oscar/Area2D" to="oscar" method="_on_area_2d_body_entered"]
+[node name="OscarDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_iy24u")
+
 [connection signal="body_entered" from="oscar/Area2D" to="oscar" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/Area2D" to="oscar" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/Area2D" to="oscar/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/Area2D" to="oscar" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/Area2D" to="oscar/Area2D" method="_on_body_exited"]

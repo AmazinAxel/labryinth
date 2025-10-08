@@ -12,6 +12,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if health <= 0:
+		self.get_node("../OscarDeath").play()
 		queue_free()
 
 func _physics_process(_delta: float) -> void:

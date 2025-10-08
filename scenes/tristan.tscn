@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dutbj2kf5xgvq"]
+[gd_scene load_steps=8 format=3 uid="uid://dutbj2kf5xgvq"]
 
 [ext_resource type="Script" uid="uid://cnh4yrrwsx6pc" path="res://scenes/tristan-code.gd" id="1_j5j4f"]
 [ext_resource type="Script" uid="uid://dfsin0efucvuv" path="res://scenes/tristan_collision.gd" id="2_fcjgn"]
-[ext_resource type="Texture2D" uid="uid://lnp17lckmx6y" path="res://sprites/tristan.png" id="2_y4e1f"]
+[ext_resource type="Texture2D" uid="uid://cerhqhgpknrno" path="res://sprites/jared.png" id="4_jqmmw"]
+[ext_resource type="AudioStream" uid="uid://b5en0kir5rmpt" path="res://assets/tristanNearby.mp3" id="5_7c134"]
+[ext_resource type="Texture2D" uid="uid://nr4d40l674se" path="res://sprites/lightning2.png" id="6_23kdw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcjgn"]
 size = Vector2(1023, 199)
+
+[sub_resource type="Curve" id="Curve_bxqx3"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 2.017094, 0, 1, Vector2(0.9915255, 1), 2.017094, 0.0, 1, 0]
+point_count = 2
 
 [node name="tristan" type="Node2D"]
 
@@ -20,9 +27,59 @@ position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_fcjgn")
 
 [node name="tristan body" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(0, 1)
-scale = Vector2(2, 2)
-texture = ExtResource("2_y4e1f")
+z_index = 2
+texture_filter = 1
+position = Vector2(7, -12)
+scale = Vector2(10.703126, 11.28125)
+texture = ExtResource("4_jqmmw")
+
+[node name="tristan body" type="Sprite2D" parent="CharacterBody2D/tristan body"]
+texture_filter = 1
+position = Vector2(-19.246714, 0.08864249)
+texture = ExtResource("4_jqmmw")
+
+[node name="tristan body2" type="Sprite2D" parent="CharacterBody2D/tristan body"]
+texture_filter = 1
+position = Vector2(-36.998535, 0.26592782)
+texture = ExtResource("4_jqmmw")
+
+[node name="tristan body3" type="Sprite2D" parent="CharacterBody2D/tristan body"]
+texture_filter = 1
+position = Vector2(18.03212, 0.08864249)
+texture = ExtResource("4_jqmmw")
+
+[node name="tristan body4" type="Sprite2D" parent="CharacterBody2D/tristan body"]
+texture_filter = 1
+position = Vector2(35.783943, -1.7881393e-07)
+texture = ExtResource("4_jqmmw")
+
+[node name="tristanNearby" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
+stream = ExtResource("5_7c134")
+volume_db = 10.0
+pitch_scale = 5.0
+attenuation = 10.0
+parameters/looping = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CharacterBody2D"]
+z_index = 1
+position = Vector2(2, -23)
+amount = 70
+texture = ExtResource("6_23kdw")
+lifetime = 0.2
+speed_scale = 0.7
+emission_shape = 3
+emission_rect_extents = Vector2(400, 30)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 516.48
+initial_velocity_max = 516.48
+angular_velocity_min = -370.29
+angular_velocity_max = 185.14
+angle_min = -411.4
+angle_max = 678.9
+scale_amount_min = 0.01
+scale_amount_max = 0.02
+hue_variation_curve = SubResource("Curve_bxqx3")
 
 [connection signal="ready" from="." to="CharacterBody2D" method="_on_tristan_ready"]
 [connection signal="ready" from="." to="CharacterBody2D/Area2D" method="_on_tristan_ready"]
