@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd3fc3abkuhx8"]
+[gd_scene load_steps=4 format=3 uid="uid://cd3fc3abkuhx8"]
 
 [ext_resource type="Script" uid="uid://lsjdotihx3ml" path="res://timmy.gd" id="1_jox7d"]
-[ext_resource type="Texture2D" uid="uid://ckismtfldhnyl" path="res://sprites/timmy.png" id="1_nmf0k"]
+[ext_resource type="Texture2D" uid="uid://bfuvqj487pijf" path="res://sprites/timmy.png" id="1_nmf0k"]
+[ext_resource type="AudioStream" uid="uid://1216s5vo88e6" path="res://assets/timmySound.mp3" id="2_7eyjs"]
 
 [node name="Timmy" type="CanvasLayer"]
 script = ExtResource("1_jox7d")
+
+[node name="TimmySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7eyjs")
+volume_db = -10.0
+pitch_scale = 10.0
 
 [node name="timmySprite" type="Sprite2D" parent="."]
 texture_filter = 1

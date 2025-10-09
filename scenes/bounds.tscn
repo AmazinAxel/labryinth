@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkcjahxr65ll1"]
+[gd_scene load_steps=10 format=3 uid="uid://bkcjahxr65ll1"]
 
 [ext_resource type="Script" uid="uid://ctecnusijuygd" path="res://scenes/bounds.gd" id="1_iveam"]
 [ext_resource type="Script" uid="uid://dwdqje7i8lm0f" path="res://scenes/tristan.gd" id="1_m2lla"]
-[ext_resource type="Script" uid="uid://djnc8kr8uryt4" path="res://scenes/tristan_2.gd" id="3_dmyop"]
-[ext_resource type="Script" uid="uid://lce58jr065dy" path="res://scenes/tristan_3.gd" id="3_oifvq"]
+[ext_resource type="Script" path="res://scenes/tristan_2.gd" id="3_dmyop"]
+[ext_resource type="Script" path="res://scenes/tristan_3.gd" id="3_oifvq"]
 [ext_resource type="Script" uid="uid://ci5ebk2crorvd" path="res://scenes/bob-code.gd" id="3_q3qen"]
 [ext_resource type="Script" uid="uid://blr43g1kbw04j" path="res://scenes/win.gd" id="4_orywa"]
+[ext_resource type="AudioStream" uid="uid://dt218i7rsenuk" path="res://assets/winSound.mp3" id="7_iqq38"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_unffu"]
 size = Vector2(57, 20)
@@ -50,6 +51,9 @@ script = ExtResource("4_orywa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="win"]
 position = Vector2(10, -2067)
 shape = SubResource("RectangleShape2D_q3qen")
+
+[node name="WinSound" type="AudioStreamPlayer" parent="win"]
+stream = ExtResource("7_iqq38")
 
 [connection signal="body_entered" from="bob" to="bob" method="_on_body_entered"]
 [connection signal="body_entered" from="tristan3" to="tristan3" method="_on_body_entered"]

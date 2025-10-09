@@ -26,6 +26,8 @@ func _on_spawn_timer_timeout():
 	_start_spawn_cycle()
 
 func _spawn_timmy():
+	
+	get_node("TimmySound").play()
 	var screen_size = get_viewport().get_visible_rect().size
 	var sprite_size = timmy_sprite.texture.get_size()
 

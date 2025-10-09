@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://nyyd7kck8ucg"]
+[gd_scene load_steps=14 format=3 uid="uid://nyyd7kck8ucg"]
 
 [ext_resource type="Script" uid="uid://dfyqvnh5uvjja" path="res://scenes/ui.gd" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://b0h6jyhhq0a2v" path="res://sprites/heart.png" id="2_x4jx1"]
 [ext_resource type="Script" uid="uid://cpgn2djovqhrv" path="res://scenes/try_again.gd" id="3_yev5y"]
 [ext_resource type="Texture2D" uid="uid://bwlkkugxjogm8" path="res://sprites/win.png" id="4_gdt2y"]
-[ext_resource type="Script" uid="uid://duvrma2sf51ux" path="res://scenes/start-game.gd" id="5_wm3ai"]
+[ext_resource type="Script" path="res://scenes/start-game.gd" id="5_wm3ai"]
+[ext_resource type="AudioStream" uid="uid://dy8tpepe038cp" path="res://assets/deathSound.mp3" id="6_8dubc"]
+[ext_resource type="AudioStream" uid="uid://d2ghuyvkyackd" path="res://assets/spike.mp3" id="7_p7vwb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6e0p"]
 bg_color = Color(0.2231029, 0.2231029, 0.22310278, 1)
@@ -246,6 +248,13 @@ grow_vertical = 2
 text = "Labyrinth"
 label_settings = SubResource("LabelSettings_8dubc")
 horizontal_alignment = 1
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_8dubc")
+
+[node name="TakeDamageSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_p7vwb")
+pitch_scale = 10.0
 
 [connection signal="pressed" from="death/try again button" to="death/try again button" method="_on_pressed"]
 [connection signal="pressed" from="start/Button" to="death/try again button" method="_on_button_pressed"]

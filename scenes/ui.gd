@@ -11,6 +11,12 @@ func _ready():
 	"""
 # This function will automatically run whenever the player emits the signal
 func on_player_health_changed(new_health: int):
+	
+	# very glitchy idk
+	#if healthBar.value > new_health:
+		#if get_node("TakeDamageSound").playing == false:
+			#get_node("TakeDamageSound").play()
+	
 	healthBar.value = new_health
 
 
@@ -21,6 +27,7 @@ func _process(_float: float) -> void:
 
 
 func _on_game_manager_died(deathMessage: String) -> void:
+	self.get_node("DeathSound").play()
 	var deathReason = get_node("death/death reason")
 	var deathBackground = get_node("death/background")
 	deathReason.text = deathMessage;
