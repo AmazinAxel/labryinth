@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://usl83o0tohjj"]
+[gd_scene load_steps=36 format=3 uid="uid://usl83o0tohjj"]
 
 [ext_resource type="PackedScene" uid="uid://gnvl3l7nwbty" path="res://scenes/player.tscn" id="1_dg77c"]
 [ext_resource type="PackedScene" uid="uid://b3hrrlg5r6gm2" path="res://scenes/barrel.tscn" id="2_4c57u"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bkcjahxr65ll1" path="res://scenes/bounds.tscn" id="7_efxa6"]
 [ext_resource type="PackedScene" uid="uid://cd3fc3abkuhx8" path="res://scenes/timmy.tscn" id="7_vivmo"]
 [ext_resource type="PackedScene" uid="uid://dutbj2kf5xgvq" path="res://scenes/tristan.tscn" id="8_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://qydjm44eqm8f" path="res://sprites/ambient particle.png" id="8_074og"]
 [ext_resource type="PackedScene" uid="uid://cja8x6aq5tgdi" path="res://scenes/map.tscn" id="9_efxa6"]
 [ext_resource type="PackedScene" uid="uid://nyyd7kck8ucg" path="res://scenes/ui.tscn" id="9_yaehf"]
 [ext_resource type="PackedScene" uid="uid://b3djnawdrtxbc" path="res://scenes/vines.tscn" id="10_074og"]
@@ -115,6 +116,15 @@ size = Vector2(24, 20.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0odxb"]
 size = Vector2(19, 16)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cegan"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 300, 0)
+emission_shape_scale = Vector3(2000, 1800, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 98, 0)
+turbulence_enabled = true
 
 [node name="main" type="Node"]
 
@@ -420,9 +430,15 @@ position = Vector2(-1, -74)
 
 [node name="tristan" parent="." instance=ExtResource("8_2cqfq")]
 z_index = 5
-position = Vector2(66, 168)
+position = Vector2(87, 458)
 
 [node name="ui" parent="." instance=ExtResource("9_yaehf")]
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="ui"]
+position = Vector2(-1, -74)
+amount = 10000
+texture = ExtResource("8_074og")
+process_material = SubResource("ParticleProcessMaterial_cegan")
 
 [node name="vines" parent="." instance=ExtResource("10_074og")]
 
@@ -469,7 +485,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.7607843)
 
 [node name="bob" parent="." instance=ExtResource("3_efxa6")]
-position = Vector2(15, 174)
+position = Vector2(80, 464)
 
 [node name="jared" parent="." instance=ExtResource("13_ycdy4")]
 
