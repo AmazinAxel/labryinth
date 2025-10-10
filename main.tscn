@@ -117,7 +117,7 @@ size = Vector2(24, 20.75)
 size = Vector2(19, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cegan"]
-size = Vector2(21.5, 23.75)
+size = Vector2(21.5, 11.6875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82xsv"]
 size = Vector2(28, 6)
@@ -464,10 +464,10 @@ position = Vector2(-9, 0)
 polygon = PackedVector2Array(0, 0, 0, -10, 1, -31, 126, -30, 210, -29, 210, -43, 210, -112, 210, -154, 194, -154, 194, -376, 442, -357, 376, 23, -249, 87, -368, -98, -13, -376, -14, -266, 146, -265, 145, -155, -78, -155, -76, -30, 0, -31)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-55, -350, 16, -351, 17, -572, 129, -573, 130, -647, -143, -650, -141, -899, -51, -900, -48, -1087, -80, -1087, -80, -1139, -111, -1140, -111, -1229, -177, -1227, -174, -1293, -109, -1294, -109, -1344, 16, -1343, 16, -1303, 84, -1304, 81, -1400, -207, -1394, -352, -423)
+polygon = PackedVector2Array(-55, -350, 16, -351, 17, -572, 129, -573, 130, -647, -143, -650, -141, -890, -66.703735, -890, -50, -890, -48, -1087, -80, -1087, -80, -1139, -111, -1140, -111, -1229, -177, -1227, -174, -1293, -109, -1294, -109, -1344, 16, -1343, 16, -1303, 84, -1304, 81, -1400, -207, -1394, -352, -423)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(260, -381, 192, -351, 96, -349, 99, -472, 209, -472, 210, -705, 210, -717, 164, -717, 163, -803, 51, -805, 48, -715, -61, -715, -62, -831, -62, -842, 3, -843, 2, -1089, 33, -1088, 33, -1139, 67, -1138, 66, -1225, 131, -1225, 130.00006, -1335.6609, 130, -1441, 130, -1455, -158, -1454, -160, -1533, 113, -1533, 114, -1687, 177, -1688, 178, -1735, 226, -1736, 226, -1786, 352, -1785, 353, -2001, 323, -2002, 323, -2122, 176, -2121, 179, -2231, 516, -2195)
+polygon = PackedVector2Array(260, -381, 193, -344, 96, -344, 99, -472, 209, -472, 210, -705, 210, -717, 164, -717, 163, -803, 51, -805, 48, -715, -61, -715, -62, -831, -62, -842, 3, -843, 2, -1089, 33, -1088, 33, -1139, 67, -1138, 66, -1225, 131, -1225, 130.00006, -1335.6609, 130, -1441, 130, -1455, -158, -1454, -160, -1533, 113, -1533, 114, -1687, 177, -1688, 178, -1735, 226, -1736, 226, -1786, 352, -1785, 353, -2001, 323, -2002, 323, -2122, 176, -2121, 179, -2231, 516, -2195)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-348, -1375, -207, -1389, -209, -1581, 66, -1580, 65, -1684, 2, -1686, 1, -1721, -48, -1722, -48, -1914, -31, -1913, -31, -2033, -127, -2030, -127, -2094, -126, -2101, 49, -2096, 52, -1996, 239, -1997, 239, -2057, 129, -2058, 128, -2173, -38, -2198, -204, -2143, -432, -1833)
@@ -533,17 +533,17 @@ shape = SubResource("RectangleShape2D_cegan")
 debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(149.5, -155.5)
+position = Vector2(149.5, -158.6875)
 shape = SubResource("RectangleShape2D_cegan")
 debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(192, -155)
+position = Vector2(192, -157.84375)
 shape = SubResource("RectangleShape2D_cegan")
 debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(81.25, -346)
+position = Vector2(82, -350)
 shape = SubResource("RectangleShape2D_cegan")
 debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
 
@@ -553,7 +553,7 @@ shape = SubResource("RectangleShape2D_82xsv")
 debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(153, -572)
+position = Vector2(141, -572)
 shape = SubResource("RectangleShape2D_getpj")
 debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
 
@@ -578,7 +578,7 @@ shape = SubResource("RectangleShape2D_getpj")
 debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
 
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-65, -891)
+position = Vector2(-53, -893)
 shape = SubResource("RectangleShape2D_getpj")
 debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
 
@@ -667,53 +667,53 @@ position = Vector2(155, -725)
 shape = SubResource("RectangleShape2D_seu75")
 debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
 
-[connection signal="body_entered" from="oscar/Boss Oscar/Area2D" to="oscar/Boss Oscar" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/Boss Oscar/Area2D" to="oscar/Boss Oscar" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/Boss Oscar/Area2D" to="oscar/Boss Oscar" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/Boss Oscar/Area2D" to="oscar/Boss Oscar/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/Boss Oscar/Area2D" to="oscar/Boss Oscar" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/Boss Oscar/Area2D" to="oscar/Boss Oscar/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar3/Area2D" to="oscar/oscar3" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar3/Area2D" to="oscar/oscar3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar3/Area2D" to="oscar/oscar3" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar3/Area2D" to="oscar/oscar3/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar3/Area2D" to="oscar/oscar3" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar3/Area2D" to="oscar/oscar3/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar4/Area2D" to="oscar/oscar4" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar4/Area2D" to="oscar/oscar4" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar4/Area2D" to="oscar/oscar4" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar4/Area2D" to="oscar/oscar4/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar4/Area2D" to="oscar/oscar4" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar4/Area2D" to="oscar/oscar4/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar5/Area2D" to="oscar/oscar5" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar5/Area2D" to="oscar/oscar5" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar5/Area2D" to="oscar/oscar5" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar5/Area2D" to="oscar/oscar5/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar5/Area2D" to="oscar/oscar5" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar5/Area2D" to="oscar/oscar5/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar6/Area2D" to="oscar/oscar6" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar6/Area2D" to="oscar/oscar6" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar6/Area2D" to="oscar/oscar6" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar6/Area2D" to="oscar/oscar6/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar6/Area2D" to="oscar/oscar6" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar6/Area2D" to="oscar/oscar6/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar7/Area2D" to="oscar/oscar7" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar7/Area2D" to="oscar/oscar7" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar7/Area2D" to="oscar/oscar7" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar7/Area2D" to="oscar/oscar7/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar7/Area2D" to="oscar/oscar7" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar7/Area2D" to="oscar/oscar7/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar10/Area2D" to="oscar/oscar10" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar10/Area2D" to="oscar/oscar10" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar10/Area2D" to="oscar/oscar10" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar10/Area2D" to="oscar/oscar10/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar10/Area2D" to="oscar/oscar10" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar10/Area2D" to="oscar/oscar10/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar10/oscar3/Area2D" to="oscar/oscar10/oscar3" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar10/oscar3/Area2D" to="oscar/oscar10/oscar3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar10/oscar3/Area2D" to="oscar/oscar10/oscar3" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar10/oscar3/Area2D" to="oscar/oscar10/oscar3/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar10/oscar3/Area2D" to="oscar/oscar10/oscar3" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar10/oscar3/Area2D" to="oscar/oscar10/oscar3/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar11/Area2D" to="oscar/oscar11" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar11/Area2D" to="oscar/oscar11" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar11/Area2D" to="oscar/oscar11" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar11/Area2D" to="oscar/oscar11/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar11/Area2D" to="oscar/oscar11" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar11/Area2D" to="oscar/oscar11/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar12/Area2D" to="oscar/oscar12" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar12/Area2D" to="oscar/oscar12" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar12/Area2D" to="oscar/oscar12" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar12/Area2D" to="oscar/oscar12/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar12/Area2D" to="oscar/oscar12" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar12/Area2D" to="oscar/oscar12/Area2D" method="_on_body_exited"]

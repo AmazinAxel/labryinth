@@ -12,8 +12,15 @@ func _physics_process(delta: float) -> void:
 
 	if direction != Vector2.ZERO:
 		velocity = velocity.lerp(direction * speed, acceleration * delta)
+		if has_node("WalkingSound"):
+			if get_node("WalkingSound").playing == false:
+				get_node("WalkingSound").play()
 	else:
 		velocity = velocity.lerp(Vector2.ZERO, friction * delta)
+		
+		if has_node("WalkingSound"):
+			if get_node("WalkingSound").playing == true:
+				get_node("WalkingSound").stop()
 	
 	if direction.x!=0:
 		var sprites = self.get_children()
@@ -62,7 +69,8 @@ func attack():
 		
 func toggle_barrel_state() -> void:
 	var tileMap = get_node("/root/main/Map/Objects")
-	var coords = tileMap.local_to_map(global_position)
+	var local_pos = tileMap.to_local(global_position)
+	var coords = tileMap.local_to_map(local_pos)
 	var tile = tileMap.get_cell_source_id(coords)
 
 	if tile != -1:
