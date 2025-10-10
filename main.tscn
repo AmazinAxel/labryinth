@@ -1,8 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://usl83o0tohjj"]
+[gd_scene load_steps=45 format=3 uid="uid://usl83o0tohjj"]
 
 [ext_resource type="PackedScene" uid="uid://gnvl3l7nwbty" path="res://scenes/player.tscn" id="1_dg77c"]
 [ext_resource type="PackedScene" uid="uid://b3hrrlg5r6gm2" path="res://scenes/barrel.tscn" id="2_4c57u"]
-[ext_resource type="Script" path="res://oscar_2.gd" id="3_2cqfq"]
+[ext_resource type="Script" uid="uid://8q63ea3sx7yl" path="res://oscar_2.gd" id="3_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://0nq6scd76knd" path="res://scenes/bob.tscn" id="3_efxa6"]
 [ext_resource type="PackedScene" uid="uid://l8e0jnlsost7" path="res://scenes/oscar.tscn" id="4_dg77c"]
 [ext_resource type="Texture2D" uid="uid://cllm6qj63voe4" path="res://sprites/slime_spriteTop.png" id="4_yaehf"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b3djnawdrtxbc" path="res://scenes/vines.tscn" id="10_074og"]
 [ext_resource type="PackedScene" uid="uid://d0n6lyqwrpmvi" path="res://scenes/music_controller.tscn" id="12_dg77c"]
 [ext_resource type="Script" uid="uid://meqeaq01dbb" path="res://node.gd" id="12_ycdy4"]
-[ext_resource type="PackedScene" path="res://scenes/jared.tscn" id="13_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://cu6uvbn6wdxch" path="res://scenes/jared.tscn" id="13_ycdy4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_blnuo"]
 atlas = ExtResource("4_yaehf")
@@ -62,10 +62,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yaehf"]
-size = Vector2(40, 33)
+size = Vector2(38.5, 33.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_074og"]
-size = Vector2(34, 28)
+size = Vector2(36, 32.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
 atlas = ExtResource("4_yaehf")
@@ -116,6 +116,39 @@ size = Vector2(24, 20.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0odxb"]
 size = Vector2(19, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cegan"]
+size = Vector2(21.5, 5.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82xsv"]
+size = Vector2(28, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_getpj"]
+size = Vector2(38, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryguw"]
+size = Vector2(14, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d13ii"]
+size = Vector2(4, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lswn8"]
+size = Vector2(140, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6jrf"]
+size = Vector2(158, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xuqvo"]
+size = Vector2(46, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsp4k"]
+size = Vector2(60, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq58d"]
+size = Vector2(4, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_seu75"]
+size = Vector2(102, 20)
+
 [node name="main" type="Node"]
 
 [node name="barrel" parent="." instance=ExtResource("2_4c57u")]
@@ -124,27 +157,27 @@ size = Vector2(19, 16)
 z_index = 1
 position = Vector2(161, -135)
 
-[node name="oscar2" type="CharacterBody2D" parent="oscar"]
+[node name="Boss Oscar" type="CharacterBody2D" parent="oscar"]
 position = Vector2(107, -1944)
 motion_mode = 1
 script = ExtResource("3_2cqfq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar2"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/Boss Oscar"]
 texture_filter = 1
-position = Vector2(7.9999995, 5.9999995)
-scale = Vector2(0.592, 0.5)
+position = Vector2(7.736004, 6.4999847)
+scale = Vector2(0.6167501, 0.5156255)
 sprite_frames = SubResource("SpriteFrames_2cqfq")
 
-[node name="Area2D" type="Area2D" parent="oscar/oscar2"]
+[node name="Area2D" type="Area2D" parent="oscar/Boss Oscar"]
 script = ExtResource("5_074og")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar2/Area2D"]
-position = Vector2(8, 6.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/Boss Oscar/Area2D"]
+position = Vector2(7.25, 6.75)
 shape = SubResource("RectangleShape2D_yaehf")
 one_way_collision = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar2"]
-position = Vector2(7, 6)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/Boss Oscar"]
+position = Vector2(7, 6.25)
 shape = SubResource("RectangleShape2D_074og")
 one_way_collision = true
 
@@ -268,102 +301,6 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_0odxb")
 one_way_collision = true
 
-[node name="oscar7" type="CharacterBody2D" parent="oscar/oscar7"]
-position = Vector2(65, -655)
-motion_mode = 1
-script = ExtResource("6_yaehf")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar7/oscar7"]
-texture_filter = 1
-position = Vector2(-2.9802322e-08, -1.1920929e-07)
-scale = Vector2(0.37890628, 0.32031247)
-sprite_frames = SubResource("SpriteFrames_d13ii")
-
-[node name="Area2D" type="Area2D" parent="oscar/oscar7/oscar7"]
-script = ExtResource("5_074og")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7/oscar7/Area2D"]
-position = Vector2(0, 0.375)
-shape = SubResource("RectangleShape2D_1u8w0")
-one_way_collision = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar7/oscar7"]
-position = Vector2(2, 9)
-shape = SubResource("RectangleShape2D_0odxb")
-one_way_collision = true
-
-[node name="oscar8" type="CharacterBody2D" parent="oscar"]
-position = Vector2(-180, -2747)
-motion_mode = 1
-script = ExtResource("6_yaehf")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar8"]
-texture_filter = 1
-position = Vector2(-2.9802322e-08, -1.1920929e-07)
-scale = Vector2(0.37890628, 0.32031247)
-sprite_frames = SubResource("SpriteFrames_d13ii")
-
-[node name="Area2D" type="Area2D" parent="oscar/oscar8"]
-script = ExtResource("5_074og")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar8/Area2D"]
-position = Vector2(0, 0.375)
-shape = SubResource("RectangleShape2D_1u8w0")
-one_way_collision = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar8"]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_0odxb")
-one_way_collision = true
-
-[node name="oscar3" type="CharacterBody2D" parent="oscar/oscar8"]
-position = Vector2(-280, -163)
-motion_mode = 1
-script = ExtResource("6_yaehf")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar8/oscar3"]
-texture_filter = 1
-position = Vector2(-2.9802322e-08, -1.1920929e-07)
-scale = Vector2(0.37890628, 0.32031247)
-sprite_frames = SubResource("SpriteFrames_d13ii")
-
-[node name="Area2D" type="Area2D" parent="oscar/oscar8/oscar3"]
-script = ExtResource("5_074og")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar8/oscar3/Area2D"]
-position = Vector2(0, 0.375)
-shape = SubResource("RectangleShape2D_1u8w0")
-one_way_collision = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar8/oscar3"]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_0odxb")
-one_way_collision = true
-
-[node name="oscar9" type="CharacterBody2D" parent="oscar"]
-position = Vector2(-196, -2825)
-motion_mode = 1
-script = ExtResource("6_yaehf")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar9"]
-texture_filter = 1
-position = Vector2(-2.9802322e-08, -1.1920929e-07)
-scale = Vector2(0.37890628, 0.32031247)
-sprite_frames = SubResource("SpriteFrames_d13ii")
-
-[node name="Area2D" type="Area2D" parent="oscar/oscar9"]
-script = ExtResource("5_074og")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar9/Area2D"]
-position = Vector2(0, 0.375)
-shape = SubResource("RectangleShape2D_1u8w0")
-one_way_collision = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar9"]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_0odxb")
-one_way_collision = true
-
 [node name="oscar10" type="CharacterBody2D" parent="oscar"]
 position = Vector2(-73, -1144)
 motion_mode = 1
@@ -412,9 +349,56 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_0odxb")
 one_way_collision = true
 
+[node name="oscar11" type="CharacterBody2D" parent="oscar"]
+position = Vector2(-137, -1745)
+motion_mode = 1
+script = ExtResource("6_yaehf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar11"]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, -1.1920929e-07)
+scale = Vector2(0.37890628, 0.32031247)
+sprite_frames = SubResource("SpriteFrames_d13ii")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar11"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar11/Area2D"]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_1u8w0")
+one_way_collision = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar11"]
+shape = SubResource("RectangleShape2D_0odxb")
+one_way_collision = true
+
+[node name="oscar12" type="CharacterBody2D" parent="oscar"]
+position = Vector2(-82, -1648)
+motion_mode = 1
+script = ExtResource("6_yaehf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oscar/oscar12"]
+texture_filter = 1
+position = Vector2(-2.9802322e-08, -1.1920929e-07)
+scale = Vector2(0.37890628, 0.32031247)
+sprite_frames = SubResource("SpriteFrames_d13ii")
+
+[node name="Area2D" type="Area2D" parent="oscar/oscar12"]
+script = ExtResource("5_074og")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar12/Area2D"]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_1u8w0")
+one_way_collision = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oscar/oscar12"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0odxb")
+one_way_collision = true
+
 [node name="player" parent="." instance=ExtResource("1_dg77c")]
 z_index = 1
-position = Vector2(-1, -74)
+position = Vector2(-2, -76)
 
 [node name="timmy" parent="." instance=ExtResource("7_vivmo")]
 
@@ -473,11 +457,221 @@ position = Vector2(80, 464)
 
 [node name="jared" parent="." instance=ExtResource("13_ycdy4")]
 
-[connection signal="body_entered" from="oscar/oscar2/Area2D" to="oscar/oscar2" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="oscar/oscar2/Area2D" to="oscar/oscar2" method="_on_body_entered"]
-[connection signal="body_entered" from="oscar/oscar2/Area2D" to="oscar/oscar2/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="oscar/oscar2/Area2D" to="oscar/oscar2" method="_on_area_2d_body_exited"]
-[connection signal="body_exited" from="oscar/oscar2/Area2D" to="oscar/oscar2/Area2D" method="_on_body_exited"]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-9, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 0, -10, 1, -31, 126, -30, 210, -29, 210, -43, 210, -112, 210, -154, 194, -154, 194, -376, 442, -357, 376, 23, -249, 87, -368, -98, -13, -376, -14, -266, 148, -268, 145, -155, -78, -155, -76, -30, 0, -31)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-55, -350, 16, -351, 17, -572, 129, -573, 130, -652, -143, -650, -141, -899, -51, -900, -48, -1087, -80, -1087, -80, -1139, -111, -1140, -111, -1229, -177, -1227, -174, -1293, -109, -1294, -109, -1344, 16, -1343, 16, -1303, 84, -1304, 81, -1400, -207, -1394, -352, -423)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(260, -381, 191, -346, 94, -345, 99, -472, 209, -472, 210, -705, 210, -717, 164, -717, 163, -803, 51, -805, 51, -717, -61, -715, -62, -831, -62, -842, -1, -843, 2, -1089, 33, -1088, 33, -1139, 67, -1138, 66, -1225, 130, -1228, 130.00006, -1335.6609, 130, -1458, 130, -1464, -157, -1459, -157, -1532, 113, -1533, 114, -1687, 177, -1688, 178, -1735, 226, -1736, 226, -1786, 352, -1785, 353, -2001, 323, -2002, 323, -2122, 176, -2121, 179, -2231, 516, -2195)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-348, -1375, -207, -1389, -206, -1592, 67, -1593, 64, -1686, 2, -1686, 1, -1721, -48, -1720, -48, -1914, -31, -1913, -31, -2033, -127, -2030, -127, -2094, -126, -2101, 49, -2096, 51, -2006, 239, -2004, 239, -2057, 129, -2058, 128, -2173, -38, -2198, -204, -2143, -432, -1833)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-23, -1261)
+shape = SubResource("RectangleShape2D_cegan")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(26, -1212)
+shape = SubResource("RectangleShape2D_cegan")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-22, -1180)
+shape = SubResource("RectangleShape2D_cegan")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-70, -1211)
+shape = SubResource("RectangleShape2D_cegan")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(137, -1757)
+shape = SubResource("RectangleShape2D_cegan")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(90, -1836)
+shape = SubResource("RectangleShape2D_cegan")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(169, -1820)
+shape = SubResource("RectangleShape2D_cegan")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(42, -1756)
+shape = SubResource("RectangleShape2D_cegan")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(9, -1821)
+shape = SubResource("RectangleShape2D_cegan")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(314, -1853)
+shape = SubResource("RectangleShape2D_cegan")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(313, -1949)
+shape = SubResource("RectangleShape2D_cegan")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(57, -1935)
+shape = SubResource("RectangleShape2D_cegan")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(149.5, -155.5)
+shape = SubResource("RectangleShape2D_cegan")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(192, -155)
+shape = SubResource("RectangleShape2D_cegan")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(81.25, -346)
+shape = SubResource("RectangleShape2D_cegan")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(34, -346)
+shape = SubResource("RectangleShape2D_82xsv")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(153, -572)
+shape = SubResource("RectangleShape2D_getpj")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(215, -571)
+shape = SubResource("RectangleShape2D_getpj")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-73, -763)
+shape = SubResource("RectangleShape2D_getpj")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-133, -764)
+shape = SubResource("RectangleShape2D_getpj")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(15, -890)
+shape = SubResource("RectangleShape2D_getpj")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-65, -891)
+shape = SubResource("RectangleShape2D_getpj")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7, -1085)
+shape = SubResource("RectangleShape2D_getpj")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-54, -1083)
+shape = SubResource("RectangleShape2D_getpj")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(76, -1340)
+shape = SubResource("RectangleShape2D_getpj")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(135, -1339)
+shape = SubResource("RectangleShape2D_getpj")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(121, -1658)
+shape = SubResource("RectangleShape2D_getpj")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(58, -1659)
+shape = SubResource("RectangleShape2D_getpj")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(330, -1995)
+shape = SubResource("RectangleShape2D_getpj")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(220, -1997)
+shape = SubResource("RectangleShape2D_getpj")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-40, -1899)
+shape = SubResource("RectangleShape2D_getpj")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D33" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(14, -1898)
+shape = SubResource("RectangleShape2D_ryguw")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D34" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(18, -1962)
+shape = SubResource("RectangleShape2D_d13ii")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D35" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(89, -2007.5)
+shape = SubResource("RectangleShape2D_lswn8")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D36" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(194, -1919)
+shape = SubResource("RectangleShape2D_a6jrf")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D37" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(251, -1880.5)
+shape = SubResource("RectangleShape2D_xuqvo")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D38" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(101, -524)
+shape = SubResource("RectangleShape2D_qsp4k")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D39" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(130, -555)
+shape = SubResource("RectangleShape2D_kq58d")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[node name="CollisionShape2D40" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(155, -725)
+shape = SubResource("RectangleShape2D_seu75")
+debug_color = Color(0.9222157, 0.16422626, 0.56301856, 0.41960785)
+
+[connection signal="body_entered" from="oscar/Boss Oscar/Area2D" to="oscar/Boss Oscar" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/Boss Oscar/Area2D" to="oscar/Boss Oscar" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/Boss Oscar/Area2D" to="oscar/Boss Oscar/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/Boss Oscar/Area2D" to="oscar/Boss Oscar" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/Boss Oscar/Area2D" to="oscar/Boss Oscar/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="oscar/oscar3/Area2D" to="oscar/oscar3" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar3/Area2D" to="oscar/oscar3" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar3/Area2D" to="oscar/oscar3/Area2D" method="_on_body_entered"]
@@ -503,26 +697,6 @@ position = Vector2(80, 464)
 [connection signal="body_entered" from="oscar/oscar7/Area2D" to="oscar/oscar7/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar7/Area2D" to="oscar/oscar7" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar7/Area2D" to="oscar/oscar7/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7" method="_on_body_entered"]
-[connection signal="body_entered" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7" method="_on_area_2d_body_exited"]
-[connection signal="body_exited" from="oscar/oscar7/oscar7/Area2D" to="oscar/oscar7/oscar7/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar8/Area2D" to="oscar/oscar8" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="oscar/oscar8/Area2D" to="oscar/oscar8" method="_on_body_entered"]
-[connection signal="body_entered" from="oscar/oscar8/Area2D" to="oscar/oscar8/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="oscar/oscar8/Area2D" to="oscar/oscar8" method="_on_area_2d_body_exited"]
-[connection signal="body_exited" from="oscar/oscar8/Area2D" to="oscar/oscar8/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3" method="_on_body_entered"]
-[connection signal="body_entered" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3" method="_on_area_2d_body_exited"]
-[connection signal="body_exited" from="oscar/oscar8/oscar3/Area2D" to="oscar/oscar8/oscar3/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="oscar/oscar9/Area2D" to="oscar/oscar9" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="oscar/oscar9/Area2D" to="oscar/oscar9" method="_on_body_entered"]
-[connection signal="body_entered" from="oscar/oscar9/Area2D" to="oscar/oscar9/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="oscar/oscar9/Area2D" to="oscar/oscar9" method="_on_area_2d_body_exited"]
-[connection signal="body_exited" from="oscar/oscar9/Area2D" to="oscar/oscar9/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="oscar/oscar10/Area2D" to="oscar/oscar10" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="oscar/oscar10/Area2D" to="oscar/oscar10" method="_on_body_entered"]
 [connection signal="body_entered" from="oscar/oscar10/Area2D" to="oscar/oscar10/Area2D" method="_on_body_entered"]
@@ -533,4 +707,14 @@ position = Vector2(80, 464)
 [connection signal="body_entered" from="oscar/oscar10/oscar3/Area2D" to="oscar/oscar10/oscar3/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="oscar/oscar10/oscar3/Area2D" to="oscar/oscar10/oscar3" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="oscar/oscar10/oscar3/Area2D" to="oscar/oscar10/oscar3/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="oscar/oscar11/Area2D" to="oscar/oscar11" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar11/Area2D" to="oscar/oscar11" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar11/Area2D" to="oscar/oscar11/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar11/Area2D" to="oscar/oscar11" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar11/Area2D" to="oscar/oscar11/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="oscar/oscar12/Area2D" to="oscar/oscar12" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="oscar/oscar12/Area2D" to="oscar/oscar12" method="_on_body_entered"]
+[connection signal="body_entered" from="oscar/oscar12/Area2D" to="oscar/oscar12/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="oscar/oscar12/Area2D" to="oscar/oscar12" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="oscar/oscar12/Area2D" to="oscar/oscar12/Area2D" method="_on_body_exited"]
 [connection signal="died" from="GameManager" to="ui" method="_on_game_manager_died"]
