@@ -36,14 +36,17 @@ func _physics_process(delta: float) -> void:
 				hurtShape.position.x=-3
 	
 	#print(direction.x)
-	var manager = get_node("/root/main/GameManager")
-	if !manager:
+	
+	if has_node("/root/main/GameManager"):
+		var manager = get_node("/root/main/GameManager")
+		if manager.inBarrel:
+			velocity = Vector2.ZERO
+			manager.lastDamageReason = "barrel"
+			manager.health -= 0.05
+			
+	else:
 		return
 	
-	if manager.inBarrel:
-		velocity = Vector2.ZERO
-		manager.lastDamageReason = "barrel"
-		manager.health -= 0.05
 
 	check_for_spikes()
 	check_for_healthPotion()
@@ -91,21 +94,30 @@ func check_for_spikes() -> void:
 	if tileMap:
 		var coords = tileMap.local_to_map(global_position)
 		var tile = tileMap.get_cell_source_id(coords)
+		
 
 		if tile != -1:
 			var tile_data = tileMap.get_cell_tile_data(coords)
 			if tile_data and tile_data.get_custom_data("isSpikeType"):
-				var manager = get_node("/root/main/GameManager")
-				manager.lastDamageReason = "spikes"
-				manager.health -= 50;
-				
-				print("spikes??")
-				
-				if self.get_node("../SpikeActivated"):
-					self.get_node("../SpikeActivated").play()
-				
-				tileMap.set_cell(coords, 4, Vector2i(0, 0))
+				var tile_local_pos = tileMap.map_to_local(coords)
+				var tile_global_pos = tileMap.to_global(tile_local_pos)
 			
+				var distance = global_position.distance_to(tile_global_pos)
+				print(distance)
+			
+				if distance <= 5:
+					
+					var manager = get_node("/root/main/GameManager")
+					manager.lastDamageReason = "spikes"
+					manager.health -= 50;
+						
+					print("spikes??")
+						
+					if self.has_node("../SpikeActivated"):
+						self.get_node("../SpikeActivated").play()
+						
+					tileMap.set_cell(coords, 4, Vector2i(0, 0))
+
 func check_for_healthPotion() -> void:
 	var tileMap = get_node("/root/main/Map/Objects")
 	if tileMap:
