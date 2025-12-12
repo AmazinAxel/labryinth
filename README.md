@@ -4,3 +4,4 @@ Labryinth is dungeon adventure survival game where you have to sacrifice your he
 
 This game was made with Godot for Daydream Seattle 2025
 
+https://amazinaxel.itch.io/labryinth/devlog/1081744/111 
